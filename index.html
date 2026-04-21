@@ -90,7 +90,6 @@
         </div>
 
     <script>
-        const headerColor = m.conf === 'EAST' ? 'rgba(200, 16, 46, 0.2)' : 'rgba(29, 66, 138, 0.2)';
   // Full 2026 First Round Bracket (16 Teams)
 const matchups = [
     // --- WESTERN CONFERENCE ---
@@ -145,13 +144,12 @@ const matchups = [
         h2hLink: "https://www.basketball-reference.com/boxscores/202604200CLE.html"
     }
 ];
+
     function render() {
         const container = document.getElementById('matchups-container');
         container.innerHTML = matchups.map(m => `
             <div class="matchup-card">
-               <div class="card-header" style="background: ${headerColor}; border-bottom: 1px solid rgba(255,255,255,0.1)">
-    <span>${m.conf} ROUND 1</span> <span>${m.status}</span>
-</div>
+                <div class="card-header"><span>${m.conf} ROUND 1</span> <span>${m.status}</span></div>
                 <div class="card-body">
                     <div class="team-row">
                         <span>(${m.fSeed}) ${m.fav} <span class="trend-pill">${m.favTrend}</span></span> 
