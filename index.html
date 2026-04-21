@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NBA 2026 Prediction Hub</title>
+    <style>
+        :root { --primary: #f58426; --secondary: #1d428a; --bg: #050505; --card: #161616; --glass: rgba(255, 255, 255, 0.05); }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); color: white; margin: 0; padding: 20px; line-height: 1.6; }
+        
+        /* Header & Glassmorphism */
+        .header { text-align: center; padding: 60px 20px; background: radial-gradient(circle at center, #1d428a 0%, #050505 70%); border-radius: 20px; margin-bottom: 30px; }
+        h1 { font-size: 2.5rem; margin: 0; letter-spacing: -1px; }
+
+        /* Leaderboard Grid */
+        .standings-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-bottom: 40px; }
+        .player-card { background: var(--glass); border: 1px solid rgba(255,255,255,0.1); padding: 15px; border-radius: 12px; text-align: center; transition: 0.3s; }
+        .player-card:hover { border-color: var(--primary); transform: translateY(-5px); }
+        .rank { font-size: 0.8rem; color: var(--primary); font-weight: bold; }
+        .score { font-size: 1.5rem; font-weight: 800; display: block; }
+
+        /* Matchup Cards */
+        .matchup-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .matchup-card { background: var(--card); border-radius: 16px; overflow: hidden; border: 1px solid #222; }
+        .card-header { background: #222; padding: 10px 20px; font-size: 0.75rem; font-weight: bold; display: flex; justify-content: space-between; }
+        .card-body { padding: 20px; }
+        .team-row { display: flex; justify-content: space-between; align-items: center; margin: 12px 0; }
+        .series-score { background: #333; padding: 4px 12px; border-radius: 20px; font-size: 0.9rem; font-weight: bold; }
+        
+        /* Live News Feed */
+        .news-ticker { background: var(--primary); color: black; padding: 10px; border-radius: 8px; margin-bottom: 20px; font-weight: bold; overflow: hidden; white-space: nowrap; }
+        
+        .btn-sheet { display: block; width: fit-content; margin: 20px auto; background: var(--primary); color: black; padding: 12px 30px; border-radius: 30px; text-decoration: none; font-weight: bold; }
+.trend-pill { font-size: 0.7rem; letter-spacing: 1px; margin-left: 10px; }
+    .stats-btn { 
+        display: block; width: 100%; margin-top: 15px; background: transparent; 
+        border: 1px solid #444; color: #aaa; padding: 8px; cursor: pointer; 
+        border-radius: 6px; font-size: 0.8rem; transition: 0.2s;
+    }
+    .stats-btn:hover { background: #333; color: white; border-color: #f58426; }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>🏆 2026 NBA Playoffs Hub</h1>
+     <!--   <p>Live Tracker & Group Standings</p>
+        <a href="YOUR_GOOGLE_SHEET_URL" class="btn-sheet" target="_blank">📊 Open Prediction Sheet</a> -->
+    </div>
+
+    <div class="news-ticker">
+        <marquee>LATEST: Knicks vs Hawks Series Tied 1-1 • Timberwolves Stun Nuggets in G2 • Celtics Lead 1-0 • Next Game: Spurs vs Blazers (01:00 BST)</marquee>
+    </div>
+
+    <h2 style="border-left: 4px solid var(--primary); padding-left: 15px;">Group Standings</h2>
+    <div class="standings-container">
+        <div class="player-card"><span class="rank">#1</span><strong>Igor</strong><span class="score">14</span></div>
+        <div class="player-card"><span class="rank">#1</span><strong>Tomek</strong><span class="score">14</span></div>
+        <div class="player-card"><span class="rank">#1</span><strong>Piotrek</strong><span class="score">14</span></div>
+        <div class="player-card"><span class="rank">#4</span><strong>Marcin</strong><span class="score">12</span></div>
+        <div class="player-card"><span class="rank">#5</span><strong>Bogdan</strong><span class="score">10</span></div>
+        <div class="player-card"><span class="rank">#5</span><strong>Marcin K.</strong><span class="score">10</span></div>
+    </div>
+
+    <h2 style="border-left: 4px solid var(--secondary); padding-left: 15px;">Live Series Brackets</h2>
+    <div class="matchup-grid" id="matchups-container">
+        </div>
+
+    <script>
+     // Trends reflect the end of regular season + Game 1 results
+    // Example: 🔥🔥🔥🔥❄️ means 4 wins followed by a loss.
+   // Data validated against 2025-26 Regular Season Finale & Playoff Game 1/2 results
+const matchups = [
+    { 
+        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥🔥🔥🔥", // Won last 4 of reg season + G1
+        dog: "Suns", dSeed: 8, dogTrend: "❄️🔥❄️🔥❄️", // Alternating L/W, lost G1
+        score: "1-0", status: "G2 Tomorrow", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604190OKC.html"
+    },
+    { 
+        conf: 'WEST', fav: "Nuggets", fSeed: 3, favTrend: "🔥🔥🔥🔥❄️", // 13-game win streak SNAPPED last night
+        dog: "Timberwolves", dSeed: 6, dogTrend: "❄️❄️🔥❄️🔥", // Won Play-In, Lost G1, Won G2
+        score: "1-1", status: "Series Tied", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604200DEN.html"
+    },
+    { 
+        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥❄️", // Won 4 straight, lost G2 last night
+        dog: "Hawks", dSeed: 6, dogTrend: "❄️❄️🔥❄️🔥", // Won Play-In, Lost G1, Won G2
+        score: "1-1", status: "Series Tied", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604200NYK.html"
+    },
+    { 
+        conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥🔥", // Hottest team, won last 3 reg season + G1 & G2
+        dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️❄️", // Lost last 3 of reg season + G1 & G2
+        score: "2-0", status: "CLE leads 2-0", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604200CLE.html"
+    }
+];
+
+    function render() {
+        const container = document.getElementById('matchups-container');
+        container.innerHTML = matchups.map(m => `
+            <div class="matchup-card">
+                <div class="card-header"><span>${m.conf} ROUND 1</span> <span>${m.status}</span></div>
+                <div class="card-body">
+                    <div class="team-row">
+                        <span>(${m.fSeed}) ${m.fav} <span class="trend-pill">${m.favTrend}</span></span> 
+                        <span class="series-score">${m.score.split('-')[0]}</span>
+                    </div>
+                    <div class="team-row">
+                        <span>(${m.dSeed}) ${m.dog} <span class="trend-pill">${m.dogTrend}</span></span> 
+                        <span class="series-score">${m.score.split('-')[1]}</span>
+                    </div>
+                    <button class="stats-btn" onclick="window.open('${m.h2hLink}', '_blank')">
+                        View Box Scores & H2H Data ↗
+                    </button>
+                </div>
+            </div>
+        `).join('');
+    }
+    render();
+    </script>
+</body>
+</html>
