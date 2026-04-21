@@ -46,6 +46,21 @@
     .betting-tip h4 { margin: 0 0 5px 0; color: var(--primary); font-size: 0.9rem; }
     .betting-tip p { margin: 0; font-size: 0.85rem; color: #ccc; }
     @media (max-width: 768px) { .daily-update-section { grid-template-columns: 1fr; } }
+        .matchup-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 15px;
+}
+
+.matchup-card {
+    height: 100%; /* Ensures all cards are even height */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+          .result-item-recap { border-bottom: 1px solid #222; padding: 15px 0; }
+    .result-item-recap strong { color: white; display: block; margin-bottom: 5px; font-size: 0.95rem; }
+    .result-item-recap p { margin: 0; font-size: 0.85rem; color: #aaa; line-height: 1.4; }
     </style>
 </head>
 <body>
@@ -75,32 +90,57 @@
         </div>
 
     <script>
-     // Trends reflect the end of regular season + Game 1 results
-    // Example: 🔥🔥🔥🔥❄️ means 4 wins followed by a loss.
-   // Data validated against 2025-26 Regular Season Finale & Playoff Game 1/2 results
+  // Full 2026 First Round Bracket (16 Teams)
 const matchups = [
+    // --- WESTERN CONFERENCE ---
     { 
-        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥🔥🔥🔥", // Won last 4 of reg season + G1
-        dog: "Suns", dSeed: 8, dogTrend: "❄️🔥❄️🔥❄️", // Alternating L/W, lost G1
+        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥🔥🔥🔥", 
+        dog: "Suns", dSeed: 8, dogTrend: "❄️🔥❄️🔥❄️", 
         score: "1-0", status: "G2 Tomorrow", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604190OKC.html"
     },
     { 
-        conf: 'WEST', fav: "Nuggets", fSeed: 3, favTrend: "🔥🔥🔥🔥❄️", // 13-game win streak SNAPPED last night
-        dog: "Timberwolves", dSeed: 6, dogTrend: "❄️❄️🔥❄️🔥", // Won Play-In, Lost G1, Won G2
+        conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥🔥🔥🔥🔥", 
+        dog: "Blazers", dSeed: 7, dogTrend: "❄️❄️❄️❄️❄️", 
+        score: "1-0", status: "G2 Tonight 01:00", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604200SAS.html"
+    },
+    { 
+        conf: 'WEST', fav: "Nuggets", fSeed: 3, favTrend: "🔥🔥🔥🔥❄️", 
+        dog: "Timberwolves", dSeed: 6, dogTrend: "❄️❄️🔥❄️🔥", 
         score: "1-1", status: "Series Tied", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604200DEN.html"
     },
     { 
-        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥❄️", // Won 4 straight, lost G2 last night
-        dog: "Hawks", dSeed: 6, dogTrend: "❄️❄️🔥❄️🔥", // Won Play-In, Lost G1, Won G2
+        conf: 'WEST', fav: "Lakers", fSeed: 4, favTrend: "🔥🔥🔥❄️🔥", 
+        dog: "Rockets", dSeed: 5, dogTrend: "🔥🔥🔥🔥❄️", 
+        score: "1-0", status: "G2 Tonight 03:30", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604180LAL.html"
+    },
+    
+    // --- EASTERN CONFERENCE ---
+    { 
+        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "🔥🔥🔥🔥❄️", 
+        dog: "Magic", dSeed: 8, dogTrend: "❄️❄️❄️❄️🔥", 
+        score: "0-1", status: "G2 Tomorrow", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604190DET.html"
+    },
+    { 
+        conf: 'EAST', fav: "Celtics", fSeed: 2, favTrend: "🔥🔥🔥🔥🔥", 
+        dog: "76ers", dSeed: 7, dogTrend: "🔥🔥🔥❄️❄️", 
+        score: "1-0", status: "G2 Tonight 00:00", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604190BOS.html"
+    },
+    { 
+        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥❄️", 
+        dog: "Hawks", dSeed: 6, dogTrend: "❄️❄️🔥❄️🔥", 
         score: "1-1", status: "Series Tied", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604200NYK.html"
     },
     { 
-        conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥🔥", // Hottest team, won last 3 reg season + G1 & G2
-        dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️❄️", // Lost last 3 of reg season + G1 & G2
-        score: "2-0", status: "CLE leads 2-0", 
+        conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥🔥", 
+        dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️❄️", 
+        score: "2-0", status: "CLE Leads 2-0", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604200CLE.html"
     }
 ];
@@ -153,12 +193,6 @@ const matchups = [
         <p>Victor Wembanyama lived up to the playoff hype, racking up 24 points and 15 rebounds in a convincing Game 1 win. San Antonio’s length forced Portland into 18 turnovers, which the Spurs translated into 25 fast-break points.</p>
     </div>
 </div>
-
-<style>
-    .result-item-recap { border-bottom: 1px solid #222; padding: 15px 0; }
-    .result-item-recap strong { color: white; display: block; margin-bottom: 5px; font-size: 0.95rem; }
-    .result-item-recap p { margin: 0; font-size: 0.85rem; color: #aaa; line-height: 1.4; }
-</style>
 
     <div class="update-card">
         <h2>🔥 Informed Betting (April 21)</h2>
