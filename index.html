@@ -124,61 +124,60 @@
         </div>
 
     <script>
-  // Full 2026 First Round Bracket (16 Teams)
+// Updated Playoff Matchups & Series Scores as of April 22, 2026
 const matchups = [
     // --- WESTERN CONFERENCE ---
     { 
         conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥🔥🔥🔥", 
         dog: "Suns", dSeed: 8, dogTrend: "❄️🔥❄️🔥❄️", 
-        score: "1-0", status: "G2 Tomorrow", 
+        score: "1-0", status: "G2 Tonight (02:30 BST)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604190OKC.html"
     },
     { 
-        conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥🔥🔥🔥🔥", 
-        dog: "Blazers", dSeed: 7, dogTrend: "❄️❄️❄️❄️❄️", 
-        score: "1-0", status: "G2 Tonight 01:00", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604200SAS.html"
+        conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥🔥🔥🔥❄️", // Lost G2 at home
+        dog: "Blazers", dSeed: 7, dogTrend: "❄️❄️❄️🔥🔥", // Won last 2 (Reg season finale + G2)
+        score: "1-1", status: "Series Tied", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604210SAS.html"
     },
     { 
         conf: 'WEST', fav: "Nuggets", fSeed: 3, favTrend: "🔥🔥🔥🔥❄️", 
         dog: "Timberwolves", dSeed: 6, dogTrend: "❄️❄️🔥❄️🔥", 
-        score: "1-1", status: "Series Tied", 
+        score: "1-1", status: "G3 Friday", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604200DEN.html"
     },
     { 
-        conf: 'WEST', fav: "Lakers", fSeed: 4, favTrend: "🔥🔥🔥❄️🔥", 
-        dog: "Rockets", dSeed: 5, dogTrend: "🔥🔥🔥🔥❄️", 
-        score: "1-0", status: "G2 Tonight 03:30", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604180LAL.html"
+        conf: 'WEST', fav: "Lakers", fSeed: 4, favTrend: "🔥🔥🔥❄️🔥", // Won G2
+        dog: "Rockets", dSeed: 5, dogTrend: "🔥🔥🔥🔥❄️", // Lost G1 & G2
+        score: "2-0", status: "LAL Leads 2-0", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604210LAL.html"
     },
     
     // --- EASTERN CONFERENCE ---
     { 
         conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "🔥🔥🔥🔥❄️", 
         dog: "Magic", dSeed: 8, dogTrend: "❄️❄️❄️❄️🔥", 
-        score: "0-1", status: "G2 Tomorrow", 
+        score: "0-1", status: "G2 Tonight (00:00 BST)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604190DET.html"
     },
     { 
-        conf: 'EAST', fav: "Celtics", fSeed: 2, favTrend: "🔥🔥🔥🔥🔥", 
-        dog: "76ers", dSeed: 7, dogTrend: "🔥🔥🔥❄️❄️", 
-        score: "1-0", status: "G2 Tonight 00:00", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604190BOS.html"
+        conf: 'EAST', fav: "Celtics", fSeed: 2, favTrend: "🔥🔥🔥🔥❄️", // Lost G2 at home
+        dog: "76ers", dSeed: 7, dogTrend: "🔥🔥🔥❄️🔥", // Stole G2 road win
+        score: "1-1", status: "Series Tied", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604210BOS.html"
     },
     { 
         conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥❄️", 
         dog: "Hawks", dSeed: 6, dogTrend: "❄️❄️🔥❄️🔥", 
-        score: "1-1", status: "Series Tied", 
+        score: "1-1", status: "G3 Friday", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604200NYK.html"
     },
     { 
         conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥🔥", 
         dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️❄️", 
-        score: "2-0", status: "CLE Leads 2-0", 
+        score: "2-0", status: "G3 Thursday", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604200CLE.html"
     }
 ];
-
     function render() {
         const container = document.getElementById('matchups-container');
         container.innerHTML = matchups.map(m => `
@@ -229,49 +228,45 @@ fetchRSS();
     </script>
 
 <div class="daily-update-section">
-   <div class="update-card">
-    <h2>🌙 Last Night's Recap (April 20)</h2>
-    
-    <div class="result-item-recap">
-        <strong>Timberwolves 119, Nuggets 114</strong>
-        <p>Minnesota erased a 19-point deficit behind Anthony Edwards' 30 points to stun the defending champs at home. The Wolves' bench outscored Denver's 38-14, proving to be the difference in the clutch.</p>
-    </div>
+    <div class="update-card">
+        <h2>🌙 Last Night's Recap (April 21)</h2>
+        
+        <div class="result-item-recap">
+            <strong>76ers 111, Celtics 97</strong>
+            <p>Rookie V.J. Edgecombe put on a clinic with 30 points and 10 rebounds to help Philly steal home court. Despite Jaylen Brown’s 36-point effort, Boston’s bench vanished, and the 76ers tied the series with a blistering 19 three-pointers.</p>
+        </div>
 
-    <div class="result-item-recap">
-        <strong>Hawks 107, Knicks 106</strong>
-        <p>Trae Young silenced Madison Square Garden with a cold-blooded floater in the final seconds to steal Game 2. Despite Jalen Brunson’s 28 points, New York’s stagnant offense in the 4th quarter allowed Atlanta to mount a late 10-2 run.</p>
-    </div>
+        <div class="result-item-recap">
+            <strong>Trail Blazers 106, Spurs 103</strong>
+            <p>Portland neutralized Victor Wembanyama with a physical defensive scheme, holding him to just 6 turnovers. Anfernee Simons hit a dagger triple in the final minute to level the series at 1-1 heading back to Oregon.</p>
+        </div>
 
-    <div class="result-item-recap">
-        <strong>Cavs 115, Raptors 105</strong>
-        <p>Cleveland dominated from start to finish, led by James Harden's playmaking and Evan Mobley's interior defense. Toronto struggled to contain the Cavs' 3-point barrage, as Cleveland shot 42% from deep to take a commanding 2-0 lead.</p>
+        <div class="result-item-recap">
+            <strong>Lakers 101, Rockets 94</strong>
+            <p>The Lakers become the first lower seed to take a 2-0 lead. LeBron James controlled the tempo throughout the 4th quarter, while Houston’s young backcourt struggled with 15 second-half turnovers under LA’s veteran pressure.</p>
+        </div>
     </div>
-
-    <div class="result-item-recap">
-        <strong>Spurs 111, Blazers 98</strong>
-        <p>Victor Wembanyama lived up to the playoff hype, racking up 24 points and 15 rebounds in a convincing Game 1 win. San Antonio’s length forced Portland into 18 turnovers, which the Spurs translated into 25 fast-break points.</p>
-    </div>
-</div>
 
     <div class="update-card">
-        <h2>🔥 Informed Betting (April 21)</h2>
+        <h2>🔥 Informed Betting (April 22)</h2>
         
         <div class="betting-tip">
-            <h4>Celtics vs. 76ers (G2)</h4>
-            <p>Celtics are massive <strong>-13.5 favorites</strong>. Philly is struggling with Embiid's health. If you bet on a "Sweep," Boston MUST win tonight.</p>
+            <h4>Pistons vs. Magic (G2)</h4>
+            <p><strong>Spread: Pistons -8.5.</strong> Detroit is desperate to avoid a 0-2 hole at home. The Magic took Game 1 with defense, but Vegas expects the #1 seed to bounce back with a high-scoring "revenge" win tonight.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>Lakers vs. Rockets (G2)</h4>
-            <p>Lakers showed veteran poise in G1. Houston is favored by 4.5 tonight, but the money is moving toward another Lakers road upset.</p>
+            <h4>Thunder vs. Suns (G2)</h4>
+            <p><strong>Spread: Thunder -17.5.</strong> One of the largest playoff spreads in history. OKC won Game 1 by 35 points; if Phoenix doesn't cut down on turnovers immediately, this series is a lock for a 4-game sweep.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>Series Length Strategy</h4>
-            <p>With 2 series already at 1-1, the "In 4" or "In 5" bets are dying. Look at <strong>In 6</strong> for the Nuggets/Wolves dogfight.</p>
+            <h4>Bracket Buster Alert</h4>
+            <p>With <strong>four</strong> series now tied 1-1, "Sweep" bonus points are off the table for most participants. If you have "Suns in 7" or "Magic in 6," your long-shot bets are officially alive and well!</p>
         </div>
     </div>
 </div>
+    
 <div class="rss-section">
     <div class="rss-title">
         <span style="height:10px; width:10px; background:red; border-radius:50%; display:inline-block; animation: pulse 1.5s infinite;"></span>
