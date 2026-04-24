@@ -124,58 +124,58 @@
         </div>
 
     <script>
-// Updated Playoff Matchups & Series Scores as of April 22, 2026
+// Updated Playoff Matchups & Series Scores as of April 24, 2026
 const matchups = [
     // --- WESTERN CONFERENCE ---
     { 
         conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥🔥🔥🔥", 
-        dog: "Suns", dSeed: 8, dogTrend: "❄️🔥❄️🔥❄️", 
-        score: "1-0", status: "G2 Tonight (02:30 BST)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604190OKC.html"
+        dog: "Suns", dSeed: 8, dogTrend: "❄️🔥❄️❄️❄️", 
+        score: "2-0", status: "J-Dub (Hamstring) OUT", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604220OKC.html"
     },
     { 
-        conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥🔥🔥🔥❄️", // Lost G2 at home
-        dog: "Blazers", dSeed: 7, dogTrend: "❄️❄️❄️🔥🔥", // Won last 2 (Reg season finale + G2)
-        score: "1-1", status: "Series Tied", 
+        conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥🔥🔥🔥❄️", 
+        dog: "Blazers", dSeed: 7, dogTrend: "❄️❄️❄️🔥🔥", 
+        score: "1-1", status: "Wemby CLEARED for G3", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604210SAS.html"
     },
     { 
-        conf: 'WEST', fav: "Nuggets", fSeed: 3, favTrend: "🔥🔥🔥🔥❄️", 
-        dog: "Timberwolves", dSeed: 6, dogTrend: "❄️❄️🔥❄️🔥", 
-        score: "1-1", status: "G3 Friday", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604200DEN.html"
+        conf: 'WEST', fav: "Nuggets", fSeed: 3, favTrend: "🔥🔥🔥❄️❄️", // Lost 2 in a row
+        dog: "Timberwolves", dSeed: 6, dogTrend: "❄️🔥❄️🔥🔥", // Won 2 in a row
+        score: "1-2", status: "MIN leads 2-1 (113-96)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604230MIN.html"
     },
     { 
-        conf: 'WEST', fav: "Lakers", fSeed: 4, favTrend: "🔥🔥🔥❄️🔥", // Won G2
-        dog: "Rockets", dSeed: 5, dogTrend: "🔥🔥🔥🔥❄️", // Lost G1 & G2
-        score: "2-0", status: "LAL Leads 2-0", 
+        conf: 'WEST', fav: "Lakers", fSeed: 4, favTrend: "🔥🔥🔥❄️🔥", 
+        dog: "Rockets", dSeed: 5, dogTrend: "🔥🔥🔥🔥❄️", 
+        score: "2-0", status: "Game 3 Tomorrow", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604210LAL.html"
     },
     
     // --- EASTERN CONFERENCE ---
     { 
-        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "🔥🔥🔥🔥❄️", 
-        dog: "Magic", dSeed: 8, dogTrend: "❄️❄️❄️❄️🔥", 
-        score: "0-1", status: "G2 Tonight (00:00 BST)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604190DET.html"
+        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "🔥🔥🔥🔥🔥", 
+        dog: "Magic", dSeed: 8, dogTrend: "❄️❄️❄️❄️❄️", 
+        score: "1-1", status: "Game 3 Tomorrow", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604220DET.html"
     },
     { 
-        conf: 'EAST', fav: "Celtics", fSeed: 2, favTrend: "🔥🔥🔥🔥❄️", // Lost G2 at home
-        dog: "76ers", dSeed: 7, dogTrend: "🔥🔥🔥❄️🔥", // Stole G2 road win
-        score: "1-1", status: "Series Tied", 
+        conf: 'EAST', fav: "Celtics", fSeed: 2, favTrend: "🔥🔥🔥🔥❄️", 
+        dog: "76ers", dSeed: 7, dogTrend: "🔥🔥🔥❄️🔥", 
+        score: "1-1", status: "Game 3 Tonight (00:00 BST)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604210BOS.html"
     },
     { 
-        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥❄️", 
-        dog: "Hawks", dSeed: 6, dogTrend: "❄️❄️🔥❄️🔥", 
-        score: "1-1", status: "G3 Friday", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604200NYK.html"
+        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥❄️❄️", // Lost 2 in a row
+        dog: "Hawks", dSeed: 6, dogTrend: "❄️🔥❄️🔥🔥", // Won 2 in a row
+        score: "1-2", status: "ATL leads 2-1 (109-108)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604230ATL.html"
     },
     { 
-        conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥🔥", 
-        dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️❄️", 
-        score: "2-0", status: "G3 Thursday", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604200CLE.html"
+        conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥❄️", // Streak SNAPPED
+        dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️🔥", // Won G3
+        score: "2-1", status: "TOR won G3 (126-104)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604230TOR.html"
     }
 ];
     function render() {
@@ -229,40 +229,40 @@ fetchRSS();
 
 <div class="daily-update-section">
     <div class="update-card">
-        <h2>🌙 Last Night's Recap (April 21)</h2>
+        <h2>🌙 Last Night's Recap (April 23)</h2>
         
         <div class="result-item-recap">
-            <strong>76ers 111, Celtics 97</strong>
-            <p>Rookie V.J. Edgecombe put on a clinic with 30 points and 10 rebounds to help Philly steal home court. Despite Jaylen Brown’s 36-point effort, Boston’s bench vanished, and the 76ers tied the series with a blistering 19 three-pointers.</p>
+            <strong>Timberwolves 113, Nuggets 96</strong>
+            <p>Minnesota’s "Twin Towers" defense completely neutralized Nikola Jokic, holding him to 18 points on 17 shots. Target Center was electric as the Wolves took a 2-1 series lead, marking Denver’s first back-to-back playoff losses since 2024.</p>
         </div>
 
         <div class="result-item-recap">
-            <strong>Trail Blazers 106, Spurs 103</strong>
-            <p>Portland neutralized Victor Wembanyama with a physical defensive scheme, holding him to just 6 turnovers. Anfernee Simons hit a dagger triple in the final minute to level the series at 1-1 heading back to Oregon.</p>
+            <strong>Hawks 109, Knicks 108</strong>
+            <p>Another nail-biter in Atlanta. Trae Young (32 pts) outdueled Jalen Brunson in the final minutes. A controversial "no-call" on a Brunson drive in the final 3 seconds handed Atlanta the 2-1 lead and left Knicks fans in the group chat fuming.</p>
         </div>
 
         <div class="result-item-recap">
-            <strong>Lakers 101, Rockets 94</strong>
-            <p>The Lakers become the first lower seed to take a 2-0 lead. LeBron James controlled the tempo throughout the 4th quarter, while Houston’s young backcourt struggled with 15 second-half turnovers under LA’s veteran pressure.</p>
+            <strong>Raptors 126, Cavs 104</strong>
+            <p>Toronto avoided a 0-3 death sentence with a shooting masterclass at home. Scottie Barnes put up a triple-double (21/11/10) to snap Cleveland's 5-game winning streak and keep the Raptors' series alive.</p>
         </div>
     </div>
 
     <div class="update-card">
-        <h2>🔥 Informed Betting (April 22)</h2>
+        <h2>🔥 Informed Betting (April 24)</h2>
         
         <div class="betting-tip">
-            <h4>Pistons vs. Magic (G2)</h4>
-            <p><strong>Spread: Pistons -8.5.</strong> Detroit is desperate to avoid a 0-2 hole at home. The Magic took Game 1 with defense, but Vegas expects the #1 seed to bounce back with a high-scoring "revenge" win tonight.</p>
+            <h4>Celtics vs. 76ers (G3)</h4>
+            <p><strong>Spread: Celtics -4.5.</strong> This is the first game in Philly. After a Game 2 blowout loss, the pressure is all on Boston. If they lose tonight, they go down 1-2 and the "Celtics in 5" bets are toast.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>Thunder vs. Suns (G2)</h4>
-            <p><strong>Spread: Thunder -17.5.</strong> One of the largest playoff spreads in history. OKC won Game 1 by 35 points; if Phoenix doesn't cut down on turnovers immediately, this series is a lock for a 4-game sweep.</p>
+            <h4>⚠️ Massive Injury Update</h4>
+            <p><strong>Wemby returns!</strong> Victor Wembanyama has cleared concussion protocol and is expected to start Game 3. This is a huge boost for the Spurs who looked lost without him in Game 2.</p>
         </div>
 
         <div class="betting-tip">
             <h4>Bracket Buster Alert</h4>
-            <p>With <strong>four</strong> series now tied 1-1, "Sweep" bonus points are off the table for most participants. If you have "Suns in 7" or "Magic in 6," your long-shot bets are officially alive and well!</p>
+            <p><strong>Sweeps are officially dying.</strong> With the Cavs and Nuggets both losing, only the <strong>Lakers</strong> and <strong>Thunder</strong> have a chance at a 4-game sweep. If they lose their next games, the "Sweep" bonus points for everyone are gone.</p>
         </div>
     </div>
 </div>
