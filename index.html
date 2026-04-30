@@ -106,11 +106,13 @@
     </div>
 
 <!-- NEWS TICKER -->
- <div class="news-ticker">
+<div class="news-ticker">
     <marquee scrollamount="6">
-        🚨 LATEST: 76ers stun Celtics in G5 to force series back to Philly • Knicks take 3-2 lead behind Brunson's 39-point gem • Blazers edge Spurs 113-111 to stay alive; Wemby misses game-tying shot • Pistons face elimination tomorrow vs. #8 Magic • Lakers look to close out Rockets in Game 5 tomorrow night...
+        🚨 LATEST: Rockets win 2nd straight elimination game, trim Lakers lead to 3-2 • Pistons force G6 behind Cunningham masterclass • Cavs take 3-2 lead as Scottie Barnes exits with injury late in Toronto loss • FOUR elimination games tonight: Celtics, Knicks, Spurs, and Nuggets all looking to advance • Kevin Durant remains day-to-day for Rockets G6...
     </marquee>
 </div>
+
+    <!-- END -->
 
     <h2 style="border-left: 4px solid var(--primary); padding-left: 15px;">Group Standings</h2>
     <div class="standings-container">
@@ -128,7 +130,7 @@
 
     <script>
         
-// Updated Playoff Matchups & Series Scores as of April 29, 2026
+// Updated Playoff Matchups & Series Scores as of April 30, 2026
 const matchups = [
     // --- WESTERN CONFERENCE ---
     { 
@@ -138,50 +140,52 @@ const matchups = [
         h2hLink: "https://www.basketball-reference.com/boxscores/202604270PHX.html"
     },
     { 
-        conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥🔥🔥🔥❄️", 
-        dog: "Blazers", dSeed: 7, dogTrend: "❄️❄️❄️🔥🔥", 
-        score: "3-2", status: "POR won G5 (113-111)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604290SAS.html"
+        conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥🔥🔥🔥🔥", 
+        dog: "Blazers", dSeed: 7, dogTrend: "❄️❄️❄️🔥❄️", 
+        score: "3-2", status: "G6 Tonight in Portland", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604280SAS.html"
     },
     { 
         conf: 'WEST', fav: "Nuggets", fSeed: 3, favTrend: "❄️❄️❄️❄️🔥", 
         dog: "Timberwolves", dSeed: 6, dogTrend: "🔥🔥🔥🔥❄️", 
-        score: "2-3", status: "Game 6 Tomorrow", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604280DEN.html"
+        score: "2-3", status: "G6 Tonight in Minnesota", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604270DEN.html"
     },
     { 
-        conf: 'WEST', fav: "Lakers", fSeed: 4, favTrend: "🔥🔥🔥🔥❄️", 
-        dog: "Rockets", dSeed: 5, dogTrend: "🔥🔥❄️❄️🔥", 
-        score: "3-1", status: "Game 5 Tomorrow", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604270HOU.html"
+        conf: 'WEST', fav: "Lakers", fSeed: 4, favTrend: "🔥🔥🔥❄️❄️", // Dropped 2 straight
+        dog: "Rockets", dSeed: 5, dogTrend: "❄️❄️❄️🔥🔥", // Won 2 straight
+        score: "3-2", status: "G6 Tomorrow in Houston", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604290LAL.html"
     },
     
     // --- EASTERN CONFERENCE ---
     { 
-        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "🔥🔥🔥❄️❄️", 
-        dog: "Magic", dSeed: 8, dogTrend: "❄️❄️❄️🔥🔥", 
-        score: "1-3", status: "Game 5 Tomorrow", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604270ORL.html"
+        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "❄️❄️❄️❄️🔥", 
+        dog: "Magic", dSeed: 8, dogTrend: "🔥🔥🔥🔥❄️", 
+        score: "2-3", status: "G6 Tomorrow in Orlando", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604290DET.html"
     },
     { 
         conf: 'EAST', fav: "Celtics", fSeed: 2, favTrend: "🔥🔥🔥❄️❄️", 
-        dog: "76ers", dSeed: 7, dogTrend: "🔥🔥🔥❄️🔥", 
-        score: "3-2", status: "PHI won G5 (113-97)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604290BOS.html"
+        dog: "76ers", dSeed: 7, dogTrend: "❄️❄️❄️🔥🔥", 
+        score: "3-2", status: "G6 Tonight in Philly", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604280BOS.html"
     },
     { 
         conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥❄️🔥", 
         dog: "Hawks", dSeed: 6, dogTrend: "❄️🔥❄️🔥❄️", 
-        score: "3-2", status: "NYK leads 3-2 (126-97)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604290NYK.html"
+        score: "3-2", status: "G6 Tonight in Atlanta", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604280NYK.html"
     },
     { 
-        conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥❄️", 
-        dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️🔥", 
-        score: "2-2", status: "G5 Tomorrow", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604260TOR.html"
+        conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥🔥", 
+        dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️❄️", 
+        score: "3-2", status: "G6 Tomorrow in Toronto", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604290CLE.html"
     }
 ];
+
+        // END
     function render() {
         const container = document.getElementById('matchups-container');
         container.innerHTML = matchups.map(m => `
@@ -234,44 +238,48 @@ fetchRSS();
 <!-- DAILY UPDATE SECTION -->
     
 <div class="daily-update-section">
+    <!-- Last Night's Recap (April 29) -->
     <div class="update-card">
-        <h2>🌙 Last Night's Recap (April 28)</h2>
+        <h2>🌙 Last Night's Recap (April 29)</h2>
         
         <div class="result-item-recap">
-            <strong>Knicks 126, Hawks 97</strong>
-            <p>A Madison Square Garden masterclass. Jalen Brunson exploded for 39 points as the Knicks dismantled Atlanta's defense. New York took a 3-2 lead and reclaimed all the momentum heading back to Georgia for Game 6.</p>
+            <strong>Rockets 99, Lakers 93</strong>
+            <p>History in the making? Houston avoided elimination for the second straight game behind Jabari Smith Jr.’s 22 points. Despite LeBron James’ 25 points, LA committed 15 turnovers and saw their lead cut to 3-2 heading back to Houston.</p>
         </div>
 
         <div class="result-item-recap">
-            <strong>76ers 113, Celtics 97</strong>
-            <p>Upset alert in Boston! Despite Jaylen Brown’s best efforts, Philly’s zone defense frustrated the Celtics. The 76ers stole Game 5 on the road to keep their season alive and force a Game 6 in Philadelphia.</p>
+            <strong>Pistons 116, Magic 109</strong>
+            <p>The #1 seed stays alive! Cade Cunningham delivered a masterclass to force Game 6. Detroit finally found their rhythm at home, though Orlando still leads the series 3-2 heading back to Florida.</p>
         </div>
 
         <div class="result-item-recap">
-            <strong>Blazers 113, Spurs 111</strong>
-            <p>Portland stuns the Spurs! Victor Wembanyama had a chance to tie it at the buzzer but his floater rimmed out. The Blazers clawed back from 12 down to force a Game 6, proving they won't go quietly.</p>
+            <strong>Cavaliers 125, Raptors 120</strong>
+            <p>Cleveland reclaimed the series lead in a high-scoring shootout. Donovan Mitchell’s playmaking neutralized a hobbled Scottie Barnes, putting Toronto on the brink of elimination tomorrow night.</p>
         </div>
     </div>
 
+    <!-- Today's Betting Intel (April 30) -->
     <div class="update-card">
-        <h2>🔥 Informed Betting (April 29)</h2>
+        <h2>🔥 Informed Betting (April 30)</h2>
         
         <div class="betting-tip">
-            <h4>Pistons vs. Magic (G5 Tomorrow)</h4>
-            <p><strong>Panic Level: High.</strong> The #1 seed Pistons are down 1-3. Historically, only 5% of teams come back from this. If you have "Pistons in 7," tonight is the start of your miracle run.</p>
+            <h4>Celtics vs. 76ers (G6)</h4>
+            <p><strong>Spread: Celtics -2.5.</strong> Boston has a chance to end it in Philly tonight. After losing Game 5 at home, the Celtics are under immense pressure to avoid a Game 7.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>Series Length Tracker</h4>
-            <p>With <strong>three</strong> series now guaranteed to go at least 6 games (BOS/PHI, NYK/ATL, SAS/POR), anyone who picked "In 5" for these matchups just lost their bonus points!</p>
+            <h4>Injury Report: Kevin Durant</h4>
+            <p>Durant remains "day-to-day" with a left ankle sprain and has missed four of the first five games. If he returns for Game 6, the Rockets' comeback odds skyrocket.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>Cavaliers vs. Raptors (G5 Tomorrow)</h4>
-            <p>The Cavs are favored by 6.5 back at home. Toronto has been feisty, but Cleveland's home-court dominance is hard to ignore in a tie-break scenario.</p>
+            <h4>Luka Doncic Update</h4>
+            <p>Luka (hamstring) is reportedly not close to returning for the Lakers. Without him, LeBron is carrying a massive usage rate that showed signs of fatigue late in Game 5.</p>
         </div>
     </div>
 </div>
+
+    <!-- END -->
     
 <div class="rss-section">
     <div class="rss-title">
