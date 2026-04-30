@@ -213,8 +213,14 @@ const matchups = [
     render();
 async function fetchRSS() {
     const RSS_URL = `https://www.espn.com/espn/rss/nba/news`;
-    const API_URL = `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(RSS_URL)}`;
 
+    // Replace your current API_URL line with this if the listener update doesn't work:
+const API_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(RSS_URL)}`;
+
+// And update the data line right below it to:
+const responseData = await response.json();
+const data = JSON.parse(responseData.contents); // AllOrigins wraps the result in a 'contents' string
+    
     try {
         const response = await fetch(API_URL);
         const data = await response.json();
