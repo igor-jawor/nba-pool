@@ -118,10 +118,10 @@
     <h2 style="border-left: 4px solid var(--primary); padding-left: 15px;">Group Standings</h2>
     <div class="standings-container">
         <div class="player-card"><span class="rank">#1</span><strong>Piotrek</strong><span class="score">13</span></div>
-        <div class="player-card"><span class="rank">#2</span><strong>Tomek</strong><span class="score">12</span></div>
-        <div class="player-card"><span class="rank">#3</span><strong>Igor</strong><span class="score">12</span></div>
-        <div class="player-card"><span class="rank">#3</span><strong>Marcin</strong><span class="score">12</span></div>
-        <div class="player-card"><span class="rank">#5</span><strong>Kmieciu (aka Marcin K.)</strong><span class="score">9</span></div>
+        <div class="player-card"><span class="rank">#1</span><strong>Tomek</strong><span class="score">13</span></div>
+        <div class="player-card"><span class="rank">#1</span><strong>Igor</strong><span class="score">13</span></div>
+        <div class="player-card"><span class="rank">#1</span><strong>Marcin</strong><span class="score">13</span></div>
+        <div class="player-card"><span class="rank">#5</span><strong>Kmieciu (aka Marcin K.)</strong><span class="score">10</span></div>
         <div class="player-card"><span class="rank">#6</span><strong>Bogdan</strong><span class="score">8</span></div>
     </div>
 
@@ -211,37 +211,51 @@ const matchups = [
         `).join('');
     }
     render();
-async function fetchRSS() {
-    const RSS_URL = `https://www.espn.com/espn/rss/nba/news`;
-
-    // Replace your current API_URL line with this if the listener update doesn't work:
-const API_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(RSS_URL)}`;
-
-// And update the data line right below it to:
-const responseData = await response.json();
-const data = JSON.parse(responseData.contents); // AllOrigins wraps the result in a 'contents' string
-    
-    try {
-        const response = await fetch(API_URL);
-        const data = await response.json();
-        const container = document.getElementById('rss-feed-container');
         
-        if (data.status === 'ok') {
-            container.innerHTML = data.items.slice(0, 5).map(item => `
+async function fetchRSS() {
+    const container = document.getElementById('rss-feed-container');
+    const RSS_URL = `https://www.espn.com/espn/rss/nba/news`;
+    // We switch to AllOrigins, which is a more reliable proxy for ESPN's feed
+    const PROXY_URL = `https://api.allorigins.win/get?url=${encodeURIComponent(RSS_URL)}`;
+
+    try {
+        const response = await fetch(PROXY_URL);
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const rawData = await response.json();
+        // AllOrigins returns the XML as a string inside rawData.contents
+        const parser = new DOMParser();
+        const xmlDoc = parser.parseFromString(rawData.contents, "text/xml");
+        const items = xmlDoc.querySelectorAll("item");
+
+        let html = "";
+        // We take the top 5 stories
+        for (let i = 0; i < Math.min(items.length, 5); i++) {
+            const title = items[i].querySelector("title").textContent;
+            const link = items[i].querySelector("link").textContent;
+            const pubDate = items[i].querySelector("pubDate").textContent;
+            const time = new Date(pubDate).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+
+            html += `
                 <div class="rss-item">
-                    <a href="${item.link}" target="_blank">${item.title}</a>
-                    <span class="rss-date">${new Date(item.pubDate).toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})} - ESPN News</span>
+                    <a href="${link}" target="_blank">${title}</a>
+                    <span class="rss-date">${time} - ESPN News</span>
                 </div>
-            `).join('');
+            `;
         }
+        container.innerHTML = html;
     } catch (error) {
-        console.error("RSS Feed Error:", error);
-        document.getElementById('rss-feed-container').innerHTML = "Unable to load news feed.";
+        console.error("RSS Fetch Error:", error);
+        container.innerHTML = "News feed temporarily unavailable. Try refreshing or check back later.";
     }
 }
 
-// This waits for the HTML to be fully loaded before running the fetch
-document.addEventListener('DOMContentLoaded', fetchRSS);
+// Guaranteed trigger once the page is ready
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fetchRSS);
+} else {
+    fetchRSS();
+}
     </script>
     
 <!-- DAILY UPDATE SECTION -->
