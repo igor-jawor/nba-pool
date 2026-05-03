@@ -107,9 +107,9 @@
 
 <!-- NEWS TICKER -->
 <div class="news-ticker">
-    <marquee scrollamount="6">
-        🚨 LATEST: Rockets win 2nd straight elimination game, trim Lakers lead to 3-2 • Pistons force G6 behind Cunningham masterclass • Cavs take 3-2 lead as Scottie Barnes exits with injury late in Toronto loss • FOUR elimination games tonight: Celtics, Knicks, Spurs, and Nuggets all looking to advance • Kevin Durant remains day-to-day for Rockets G6...
-    </marquee>
+   <marquee scrollamount="6">
+    🚨 BREAKING: 76ers eliminate Celtics in Game 7 thriller; Embiid drops 34/12 to advance • Spurs advance 4-2 after dominant road win in Portland • THREE Game 7s tonight: Pistons vs Magic (20:30), Cavs vs Raptors (00:30), Nuggets vs Timberwolves (01:00) • Jalen Williams (Thunder) clears contact drills, expected for Round 2 opener vs Lakers...
+</marquee>
 </div>
 
     <!-- END -->
@@ -117,12 +117,12 @@
 
     <h2 style="border-left: 4px solid var(--primary); padding-left: 15px;">Group Standings</h2>
     <div class="standings-container">
-        <div class="player-card"><span class="rank">#1</span><strong>Piotrek</strong><span class="score">13</span></div>
-        <div class="player-card"><span class="rank">#1</span><strong>Tomek</strong><span class="score">13</span></div>
-        <div class="player-card"><span class="rank">#1</span><strong>Igor</strong><span class="score">13</span></div>
-        <div class="player-card"><span class="rank">#1</span><strong>Marcin</strong><span class="score">13</span></div>
-        <div class="player-card"><span class="rank">#5</span><strong>Kmieciu (aka Marcin K.)</strong><span class="score">10</span></div>
-        <div class="player-card"><span class="rank">#6</span><strong>Bogdan</strong><span class="score">8</span></div>
+        <div class="player-card"><span class="rank">#1</span><strong>Igor</strong><span class="score">14</span></div>
+        <div class="player-card"><span class="rank">#2</span><strong>Tomek</strong><span class="score">13</span></div>
+        <div class="player-card"><span class="rank">#2</span><strong>Piotrek</strong><span class="score">13</span></div>
+        <div class="player-card"><span class="rank">#2</span><strong>Marcin</strong><span class="score">13</span></div>
+        <div class="player-card"><span class="rank">#5</span><strong>Kmieciu (aka Marcin K.)</strong><span class="score">12</span></div>
+        <div class="player-card"><span class="rank">#6</span><strong>Bogdan</strong><span class="score">10</span></div>
     </div>
 
         <!-- END -->
@@ -133,7 +133,7 @@
 
     <script>
         
-// Updated Playoff Matchups & Series Scores as of April 30, 2026
+// Updated Playoff Matchups & Series Scores as of May 3, 2026
 const matchups = [
     // --- WESTERN CONFERENCE ---
     { 
@@ -145,46 +145,46 @@ const matchups = [
     { 
         conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥🔥🔥🔥🔥", 
         dog: "Blazers", dSeed: 7, dogTrend: "❄️❄️❄️🔥❄️", 
-        score: "3-2", status: "G6 Tonight in Portland", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604280SAS.html"
+        score: "4-2", status: "SAS ADVANCED (114-95)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202604290SAS.html"
     },
     { 
-        conf: 'WEST', fav: "Nuggets", fSeed: 3, favTrend: "❄️❄️❄️❄️🔥", 
-        dog: "Timberwolves", dSeed: 6, dogTrend: "🔥🔥🔥🔥❄️", 
-        score: "2-3", status: "G6 Tonight in Minnesota", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604270DEN.html"
+        conf: 'WEST', fav: "Nuggets", fSeed: 3, favTrend: "❄️❄️❄️❄️❄️", 
+        dog: "Timberwolves", dSeed: 6, dogTrend: "🔥🔥🔥🔥🔥", 
+        score: "3-3", status: "🚨 GAME 7 TONIGHT (01:00)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605010MIN.html"
     },
     { 
-        conf: 'WEST', fav: "Lakers", fSeed: 4, favTrend: "🔥🔥🔥❄️❄️", // Dropped 2 straight
-        dog: "Rockets", dSeed: 5, dogTrend: "❄️❄️❄️🔥🔥", // Won 2 straight
-        score: "3-2", status: "G6 Tomorrow in Houston", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604290LAL.html"
+        conf: 'WEST', fav: "Lakers", fSeed: 4, favTrend: "🔥🔥🔥🔥🔥", 
+        dog: "Rockets", dSeed: 5, dogTrend: "❄️❄️❄️❄️❄️", 
+        score: "4-2", status: "LAL ADVANCED (98-78)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605020HOU.html"
     },
     
     // --- EASTERN CONFERENCE ---
     { 
-        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "❄️❄️❄️❄️🔥", 
+        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "❄️❄️❄️🔥🔥", 
         dog: "Magic", dSeed: 8, dogTrend: "🔥🔥🔥🔥❄️", 
-        score: "2-3", status: "G6 Tomorrow in Orlando", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604290DET.html"
+        score: "3-3", status: "🚨 GAME 7 TONIGHT (20:30)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605020ORL.html"
     },
     { 
-        conf: 'EAST', fav: "Celtics", fSeed: 2, favTrend: "🔥🔥🔥❄️❄️", 
-        dog: "76ers", dSeed: 7, dogTrend: "❄️❄️❄️🔥🔥", 
-        score: "3-2", status: "G6 Tonight in Philly", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604280BOS.html"
+        conf: 'EAST', fav: "Celtics", fSeed: 2, favTrend: "❄️❄️❄️❄️❄️", 
+        dog: "76ers", dSeed: 7, dogTrend: "🔥🔥🔥🔥🔥", 
+        score: "3-4", status: "PHI ADVANCED (109-100)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605030BOS.html"
     },
     { 
-        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥❄️🔥", 
-        dog: "Hawks", dSeed: 6, dogTrend: "❄️🔥❄️🔥❄️", 
-        score: "3-2", status: "G6 Tonight in Atlanta", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604280NYK.html"
+        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥🔥", 
+        dog: "Hawks", dSeed: 6, dogTrend: "❄️❄️❄️❄️❄️", 
+        score: "4-2", status: "NYK ADVANCED (140-89)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605010ATL.html"
     },
     { 
-        conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥🔥", 
-        dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️❄️", 
-        score: "3-2", status: "G6 Tomorrow in Toronto", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202604290CLE.html"
+        conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥❄️", 
+        dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️🔥", 
+        score: "3-3", status: "🚨 GAME 7 TONIGHT (00:30)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605020TOR.html"
     }
 ];
 
@@ -261,47 +261,40 @@ if (document.readyState === 'loading') {
 <!-- DAILY UPDATE SECTION -->
     
 <div class="daily-update-section">
-    <!-- Last Night's Recap (April 29) -->
     <div class="update-card">
-        <h2>🌙 Last Night's Recap (April 29)</h2>
+        <h2>🌙 Last Night's Recap (May 3)</h2>
         
         <div class="result-item-recap">
-            <strong>Rockets 99, Lakers 93</strong>
-            <p>History in the making? Houston avoided elimination for the second straight game behind Jabari Smith Jr.’s 22 points. Despite LeBron James’ 25 points, LA committed 15 turnovers and saw their lead cut to 3-2 heading back to Houston.</p>
+            <strong>76ers 109, Celtics 100</strong>
+            <p><strong>SERIES OVER: PHI WINS 4-3.</strong> In a stunning Game 7 upset, Joel Embiid (34 pts, 12 reb) dominated the paint to eliminate the championship-favorite Celtics. Philadelphia becomes the first #7 seed in years to knock off a #2 seed in a Game 7 on the road.</p>
         </div>
 
         <div class="result-item-recap">
-            <strong>Pistons 116, Magic 109</strong>
-            <p>The #1 seed stays alive! Cade Cunningham delivered a masterclass to force Game 6. Detroit finally found their rhythm at home, though Orlando still leads the series 3-2 heading back to Florida.</p>
-        </div>
-
-        <div class="result-item-recap">
-            <strong>Cavaliers 125, Raptors 120</strong>
-            <p>Cleveland reclaimed the series lead in a high-scoring shootout. Donovan Mitchell’s playmaking neutralized a hobbled Scottie Barnes, putting Toronto on the brink of elimination tomorrow night.</p>
+            <strong>Spurs 114, Blazers 95</strong>
+            <p><strong>SERIES OVER: SAS WINS 4-2.</strong> Victor Wembanyama closed the door on Portland with a 28-point defensive masterclass. San Antonio advances to face either the Nuggets or Timberwolves in the next round.</p>
         </div>
     </div>
 
-    <!-- Today's Betting Intel (April 30) -->
     <div class="update-card">
-        <h2>🔥 Informed Betting (April 30)</h2>
+        <h2>🔥 Informed Betting (May 3)</h2>
         
         <div class="betting-tip">
-            <h4>Celtics vs. 76ers (G6)</h4>
-            <p><strong>Spread: Celtics -2.5.</strong> Boston has a chance to end it in Philly tonight. After losing Game 5 at home, the Celtics are under immense pressure to avoid a Game 7.</p>
+            <h4>Pistons vs. Magic (Game 7)</h4>
+            <p><strong>Spread: Pistons -4.5.</strong> The #1 seed is in a "Win or Go Home" scenario against the #8 seed. Detroit has the home court, but Orlando has the momentum. If the Magic win, it's the biggest upset of the decade.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>Injury Report: Kevin Durant</h4>
-            <p>Durant remains "day-to-day" with a left ankle sprain and has missed four of the first five games. If he returns for Game 6, the Rockets' comeback odds skyrocket.</p>
+            <h4>Nuggets vs. Timberwolves (Game 7)</h4>
+            <p><strong>Spread: Nuggets -2.5.</strong> The defending champs are at home, but Anthony Edwards has outplayed Jokic in 3 of the 6 games so far. This is a true coin-flip for your "Series Winner" points.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>Luka Doncic Update</h4>
-            <p>Luka (hamstring) is reportedly not close to returning for the Lakers. Without him, LeBron is carrying a massive usage rate that showed signs of fatigue late in Game 5.</p>
+            <h4>⚠️ Leaderboard Warning</h4>
+            <p>The Celtics' elimination has likely "busted" several brackets in your group. Check the points! Whoever had **76ers in 7** is currently the smartest person in the room.</p>
         </div>
     </div>
 </div>
-
+    
     <!-- END -->
     
 <div class="rss-section">
