@@ -107,8 +107,8 @@
 
 <!-- NEWS TICKER -->
 <div class="news-ticker">
-   <marquee scrollamount="6">
-    🚨 BREAKING: 76ers eliminate Celtics in Game 7 thriller; Embiid drops 34/12 to advance • Spurs advance 4-2 after dominant road win in Portland • THREE Game 7s tonight: Pistons vs Magic (20:30), Cavs vs Raptors (00:30), Nuggets vs Timberwolves (01:00) • Jalen Williams (Thunder) clears contact drills, expected for Round 2 opener vs Lakers...
+ <marquee scrollamount="6">
+    🚨 BREAKING: Round 1 complete! Pistons, Cavaliers, 76ers, and Timberwolves all survive Game 7s to advance • Knicks vs. 76ers Game 1 tips off tonight in Madison Square Garden • Pistons host Cavaliers for Game 1 on Tuesday • OKC Thunder vs. LA Lakers locked in for Western Semifinals...
 </marquee>
 </div>
 
@@ -118,11 +118,11 @@
     <h2 style="border-left: 4px solid var(--primary); padding-left: 15px;">Group Standings</h2>
     <div class="standings-container">
         <div class="player-card"><span class="rank">#1</span><strong>Igor</strong><span class="score">14</span></div>
-        <div class="player-card"><span class="rank">#2</span><strong>Tomek</strong><span class="score">13</span></div>
-        <div class="player-card"><span class="rank">#2</span><strong>Piotrek</strong><span class="score">13</span></div>
         <div class="player-card"><span class="rank">#2</span><strong>Marcin</strong><span class="score">13</span></div>
-        <div class="player-card"><span class="rank">#5</span><strong>Kmieciu (aka Marcin K.)</strong><span class="score">12</span></div>
-        <div class="player-card"><span class="rank">#6</span><strong>Bogdan</strong><span class="score">10</span></div>
+        <div class="player-card"><span class="rank">#3</span><strong>Kmieciu (aka Marcin K.)</strong><span class="score">10</span></div>
+        <div class="player-card"><span class="rank">#4</span><strong>Tomek</strong><span class="score">9</span></div>
+        <div class="player-card"><span class="rank">#4</span><strong>Piotrek</strong><span class="score">9</span></div>
+        <div class="player-card"><span class="rank">#6</span><strong>Bogdan</strong><span class="score">8</span></div>
     </div>
 
         <!-- END -->
@@ -133,58 +133,58 @@
 
     <script>
         
-// Updated Playoff Matchups & Series Scores as of May 3, 2026
+// Finalized Round 1 Playoff Matchups & Series Scores as of May 4, 2026
 const matchups = [
     // --- WESTERN CONFERENCE ---
     { 
         conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥🔥🔥🔥", 
         dog: "Suns", dSeed: 8, dogTrend: "❄️❄️❄️❄️❄️", 
-        score: "4-0", status: "OKC ADVANCED (SWEEP)", 
+        score: "4-0", status: "OKC ADVANCED (4-0)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604270PHX.html"
     },
     { 
         conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥🔥🔥🔥🔥", 
         dog: "Blazers", dSeed: 7, dogTrend: "❄️❄️❄️🔥❄️", 
-        score: "4-2", status: "SAS ADVANCED (114-95)", 
+        score: "4-2", status: "SAS ADVANCED (4-2)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202604290SAS.html"
     },
     { 
         conf: 'WEST', fav: "Nuggets", fSeed: 3, favTrend: "❄️❄️❄️❄️❄️", 
         dog: "Timberwolves", dSeed: 6, dogTrend: "🔥🔥🔥🔥🔥", 
-        score: "3-3", status: "🚨 GAME 7 TONIGHT (01:00)", 
+        score: "2-4", status: "MIN ADVANCED (4-2)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605010MIN.html"
     },
     { 
         conf: 'WEST', fav: "Lakers", fSeed: 4, favTrend: "🔥🔥🔥🔥🔥", 
         dog: "Rockets", dSeed: 5, dogTrend: "❄️❄️❄️❄️❄️", 
-        score: "4-2", status: "LAL ADVANCED (98-78)", 
+        score: "4-2", status: "LAL ADVANCED (4-2)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605020HOU.html"
     },
     
     // --- EASTERN CONFERENCE ---
     { 
-        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "❄️❄️❄️🔥🔥", 
+        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "🔥🔥🔥❄️🔥", 
         dog: "Magic", dSeed: 8, dogTrend: "🔥🔥🔥🔥❄️", 
-        score: "3-3", status: "🚨 GAME 7 TONIGHT (20:30)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605020ORL.html"
+        score: "4-3", status: "DET ADVANCED (4-3)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605030DET.html"
     },
     { 
         conf: 'EAST', fav: "Celtics", fSeed: 2, favTrend: "❄️❄️❄️❄️❄️", 
         dog: "76ers", dSeed: 7, dogTrend: "🔥🔥🔥🔥🔥", 
-        score: "3-4", status: "PHI ADVANCED (109-100)", 
+        score: "3-4", status: "PHI ADVANCED (4-3)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605030BOS.html"
     },
     { 
         conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥🔥", 
         dog: "Hawks", dSeed: 6, dogTrend: "❄️❄️❄️❄️❄️", 
-        score: "4-2", status: "NYK ADVANCED (140-89)", 
+        score: "4-2", status: "NYK ADVANCED (4-2)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605010ATL.html"
     },
     { 
-        conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥❄️", 
-        dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️🔥", 
-        score: "3-3", status: "🚨 GAME 7 TONIGHT (00:30)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605020TOR.html"
+        conf: 'EAST', fav: "Cavaliers", fSeed: 4, favTrend: "🔥🔥🔥🔥🔥", 
+        dog: "Raptors", dSeed: 5, dogTrend: "❄️❄️❄️❄️❄️", 
+        score: "4-3", status: "CLE ADVANCED (4-3)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605030CLE.html"
     }
 ];
 
@@ -262,35 +262,40 @@ if (document.readyState === 'loading') {
     
 <div class="daily-update-section">
     <div class="update-card">
-        <h2>🌙 Last Night's Recap (May 3)</h2>
+        <h2>🌙 Game 7 Recap (May 3)</h2>
         
         <div class="result-item-recap">
-            <strong>76ers 109, Celtics 100</strong>
-            <p><strong>SERIES OVER: PHI WINS 4-3.</strong> In a stunning Game 7 upset, Joel Embiid (34 pts, 12 reb) dominated the paint to eliminate the championship-favorite Celtics. Philadelphia becomes the first #7 seed in years to knock off a #2 seed in a Game 7 on the road.</p>
+            <strong>Pistons 116, Magic 94</strong>
+            <p><strong>SERIES OVER: DET WINS 4-3.</strong> The top-seeded Pistons finally snapped their 18-year playoff series drought. Cade Cunningham (32 pts, 12 ast) and Tobias Harris (30 pts) became the first Detroit duo to score 30+ points in a playoff game since 1977, overcoming Paolo Banchero's heroic 38-point performance.</p>
         </div>
 
         <div class="result-item-recap">
-            <strong>Spurs 114, Blazers 95</strong>
-            <p><strong>SERIES OVER: SAS WINS 4-2.</strong> Victor Wembanyama closed the door on Portland with a 28-point defensive masterclass. San Antonio advances to face either the Nuggets or Timberwolves in the next round.</p>
+            <strong>Cavaliers 114, Toronto 102</strong>
+            <p><strong>SERIES OVER: CLE WINS 4-3.</strong> Jarrett Allen tied his playoff career high with 22 points and pulled down 19 rebounds. The home team won every single game in this physical series, sending the feisty Raptors home.</p>
+        </div>
+
+        <div class="result-item-recap">
+            <strong>76ers 109, Celtics 100</strong>
+            <p><strong>SERIES OVER: PHI WINS 4-3.</strong> In a stunning Game 7 on Saturday night, Joel Embiid (34 pts) and Tyrese Maxey (30 pts) eliminated the championship-favorite Celtics to complete the comeback from a 3-1 deficit.</p>
         </div>
     </div>
 
     <div class="update-card">
-        <h2>🔥 Informed Betting (May 3)</h2>
+        <h2>🔥 Conference Semifinals Preview</h2>
         
         <div class="betting-tip">
-            <h4>Pistons vs. Magic (Game 7)</h4>
-            <p><strong>Spread: Pistons -4.5.</strong> The #1 seed is in a "Win or Go Home" scenario against the #8 seed. Detroit has the home court, but Orlando has the momentum. If the Magic win, it's the biggest upset of the decade.</p>
+            <h4>Pistons vs. Cavaliers (East Semis)</h4>
+            <p>A classic Central Division clash. Game 1 tips off on Tuesday at Little Caesars Arena. Both teams are coming off exhausting 7-game series, making depth the critical factor.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>Nuggets vs. Timberwolves (Game 7)</h4>
-            <p><strong>Spread: Nuggets -2.5.</strong> The defending champs are at home, but Anthony Edwards has outplayed Jokic in 3 of the 6 games so far. This is a true coin-flip for your "Series Winner" points.</p>
+            <h4>Knicks vs. 76ers (East Semis)</h4>
+            <p>Game 1 begins tonight! The Knicks are well-rested after resting for days, while the 76ers are coming off an emotional high from their Game 7 victory. Watch out for early fatigue on Philly's side.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>⚠️ Leaderboard Warning</h4>
-            <p>The Celtics' elimination has likely "busted" several brackets in your group. Check the points! Whoever had **76ers in 7** is currently the smartest person in the room.</p>
+            <h4>The Leaderboard Dust Settles</h4>
+            <p>With the first round wrapped up, point tallies are being finalized. Round 2 predictions are officially open—make sure to submit your Conference Semifinal picks before tonight's tip-off!</p>
         </div>
     </div>
 </div>
