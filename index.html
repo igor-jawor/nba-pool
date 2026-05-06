@@ -108,12 +108,12 @@
 <!-- NEWS TICKER -->
 <div class="news-ticker">
 <marquee scrollamount="6">
-    🚨 SEMIS UPDATE: Knicks take 1-0 lead over 76ers behind Brunson's 32-point gem • OKC Thunder host Lakers for Game 1 tonight • Pistons vs. Cavs Central Division clash starts tonight in Detroit • Joel Embiid (76ers) listed as questionable for Game 2 with knee soreness • Spurs vs. Wolves series tips off tomorrow...
+    🚨 SEMIS: Thunder dominate Lakers in G1 to extend win streak to 5 • Cavs steal home court from #1 Pistons with gritty 94-98 win • Knicks host 76ers for pivotal Game 2 tonight • Spurs vs. Timberwolves series kicks off tonight in San Antonio • Joel Embiid (knee) cleared for G2 but mobility remains limited...
 </marquee>
 </div>
 
     <!-- END -->
-<!-- NSTANDINGS -->
+<!-- STANDINGS -->
 
     <h2 style="border-left: 4px solid var(--primary); padding-left: 15px;">Group Standings</h2>
     <div class="standings-container">
@@ -133,33 +133,33 @@
 
     <script>
         
-// Updated Conference Semifinals Matchups as of May 5, 2026
+// Updated Conference Semifinals Matchups as of May 6, 2026
 const matchups = [
     // --- WESTERN CONFERENCE SEMIS ---
     { 
-        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥🔥🔥🔥", 
-        dog: "Lakers", dSeed: 4, dogTrend: "🔥🔥❄️❄️🔥", 
-        score: "0-0", status: "Game 1 Tonight (02:30 BST)", 
+        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥🔥🔥🔥", // 5 straight playoff wins
+        dog: "Lakers", dSeed: 4, dogTrend: "🔥❄️❄️🔥❄️", // Lost G1
+        score: "1-0", status: "OKC leads 1-0 (118-102)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605050OKC.html"
     },
     { 
         conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "❄️🔥🔥❄️🔥", 
         dog: "Timberwolves", dSeed: 6, dogTrend: "🔥🔥🔥❄️🔥", 
-        score: "0-0", status: "Game 1 Wednesday", 
+        score: "0-0", status: "Game 1 Tonight (01:00 BST)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605060SAS.html"
     },
     
     // --- EASTERN CONFERENCE SEMIS ---
     { 
-        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "❄️🔥🔥🔥🔥", // Won G6 R1 & G1 R2
-        dog: "76ers", dSeed: 7, dogTrend: "🔥🔥❄️🔥❄️", // Lost G1 R2
-        score: "1-0", status: "NYK leads 1-0 (112-104)", 
+        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "❄️🔥🔥🔥🔥", 
+        dog: "76ers", dSeed: 7, dogTrend: "🔥🔥❄️🔥❄️", 
+        score: "1-0", status: "Game 2 Tonight (00:30 BST)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605040NYK.html"
     },
     { 
-        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "❄️❄️🔥❄️🔥", 
-        dog: "Cavaliers", dSeed: 4, dogTrend: "❄️❄️🔥❄️🔥", 
-        score: "0-0", status: "Game 1 Tonight (00:30 BST)", 
+        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "❄️🔥❄️🔥❄️", // Lost G1
+        dog: "Cavaliers", dSeed: 4, dogTrend: "🔥❄️🔥❄️🔥", // Won G1
+        score: "0-1", status: "CLE leads 1-0 (98-94)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605050DET.html"
     }
 ];
@@ -237,33 +237,38 @@ if (document.readyState === 'loading') {
 <!-- DAILY UPDATE SECTION -->
     
 <div class="daily-update-section">
-    <!-- Last Night's Recap (May 4) -->
+    <!-- Last Night's Recap (May 5) -->
     <div class="update-card">
-        <h2>🌙 Last Night's Recap (May 4)</h2>
+        <h2>🌙 Last Night's Recap (May 5)</h2>
         
         <div class="result-item-recap">
-            <strong>Knicks 112, 76ers 104</strong>
-            <p><strong>NYK leads 1-0.</strong> Jalen Brunson continued his postseason tear with 32 points and 9 assists. The Knicks' bench outscored Philly’s 34-12, proving depth is the early story of this series. Joel Embiid finished with 28 points but appeared to favor his knee late in the 4th quarter.</p>
+            <strong>Thunder 118, Lakers 102</strong>
+            <p><strong>OKC leads 1-0.</strong> Shai Gilgeous-Alexander was unstoppable with 34 points, outclassing the Lakers' perimeter defense. The Thunder's young core looked fresh, while LeBron James (21 pts) appeared to struggle with the pace in the second half. OKC has now won 5 straight playoff games.</p>
+        </div>
+
+        <div class="result-item-recap">
+            <strong>Cavaliers 98, Pistons 94</strong>
+            <p><strong>CLE leads 1-0.</strong> An absolute defensive grind. Donovan Mitchell took over in the final 2 minutes to steal Game 1 on the road. The #1 seed Pistons looked sluggish after their 7-game Round 1 battle, shooting just 41% from the field.</p>
         </div>
     </div>
 
-    <!-- Today's Betting Intel (May 5) -->
+    <!-- Today's Betting Intel (May 6) -->
     <div class="update-card">
-        <h2>🔥 Semi-Final Intel (May 5)</h2>
+        <h2>🔥 Semi-Final Betting Intel</h2>
         
         <div class="betting-tip">
-            <h4>Thunder vs. Lakers (Game 1)</h4>
-            <p><strong>Spread: Thunder -6.5.</strong> OKC is well-rested after their sweep, while the Lakers are coming off a physical 6-game battle with Houston. Look for the Thunder's transition pace to test the Lakers' veteran legs early.</p>
+            <h4>Knicks vs. 76ers (Game 2)</h4>
+            <p><strong>Spread: Knicks -4.5.</strong> Embiid is playing through a meniscus injury, and the Garden will be deafening. The Knicks have a chance to take a 2-0 stranglehold. Expect Josh Hart to be the rebounding engine again.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>Pistons vs. Cavaliers (Game 1)</h4>
-            <p><strong>Over/Under: 212.5.</strong> Both teams are coming off grueling 7-game series. Expect a "slugfest" start with heavy defensive intensity as both rotations look to find their legs after just 48 hours of rest.</p>
+            <h4>Spurs vs. Timberwolves (Game 1)</h4>
+            <p><strong>Key Matchup: Wemby vs. Gobert/KAT.</strong> This is the ultimate "Twin Towers" chess match. Minnesota has the size to bother Victor, but the Spurs' home-court energy in San Antonio is hard to bet against in an opener.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>⚠️ Prediction Tracker Update</h4>
-            <p>Round 2 scoring is officially LIVE. The <strong>Knicks'</strong> win has given an early edge to those who stayed loyal to the MSG home court.</p>
+            <h4>⚠️ Prediction Tracker Watch</h4>
+            <p><strong>Bogdan</strong> and <strong>Marcin</strong> had the Cavs making noise—that Game 1 steal just gave their brackets a massive boost. If Philly loses tonight, <strong>Igor's</strong> "Knicks in 6" pick starts looking like a lock[cite: 1].</p>
         </div>
     </div>
 </div>
