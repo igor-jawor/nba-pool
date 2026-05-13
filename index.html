@@ -108,7 +108,7 @@
 <!-- NEWS TICKER -->
 <div class="news-ticker">
 <marquee scrollamount="6">
-    🚨 SEMIS: Knicks take commanding 2-0 lead over 76ers after gritty 108-102 win • Spurs respond with massive 133-95 blowout of Timberwolves to tie series 1-1 • Thunder host Lakers for pivotal Game 2 tonight • Pistons and Cavs split first two games; series moves to Cleveland Friday • Embiid knee health remains primary concern for 76ers...
+    🚨 SEMIS: Spurs crush Timberwolves 126-97 to take 3-2 lead; Wemby drops 27/17 • ELIMINATION WATCH: #1 Pistons host Cavs tonight (00:30 BST) trailing 1-3 in the series • OKC and New York continue to rest ahead of Conference Finals • Victor Wembanyama: "The job isn't finished until we win 4"...
 </marquee>
 </div>
 
@@ -117,12 +117,12 @@
 
     <h2 style="border-left: 4px solid var(--primary); padding-left: 15px;">Group Standings</h2>
     <div class="standings-container">
-        <div class="player-card"><span class="rank">#1</span><strong>Marcin</strong><span class="score">29</span></div>
-        <div class="player-card"><span class="rank">#2</span><strong>Igor</strong><span class="score">26</span></div>
-        <div class="player-card"><span class="rank">#3</span><strong>Bogdan</strong><span class="score">24</span></div>
-        <div class="player-card"><span class="rank">#4</span><strong>Marcin K. (Kmieciu)</strong><span class="score">22</span></div>
-        <div class="player-card"><span class="rank">#4</span><strong>Tomek</strong><span class="score">17</span></div>
-        <div class="player-card"><span class="rank">#6</span><strong>Piotrek</strong><span class="score">9 (TBC)</span></div>
+        <div class="player-card"><span class="rank">#1</span><strong>Igor</strong><span class="score">31</span></div>
+        <div class="player-card"><span class="rank">#2</span><strong>Marcin</strong><span class="score">29</span></div>
+        <div class="player-card"><span class="rank">#3</span><strong>Marcin K. (Kmieciu)</strong><span class="score">26</span></div>
+        <div class="player-card"><span class="rank">#3</span><strong>Piotrek</strong><span class="score">26</span></div>
+        <div class="player-card"><span class="rank">#5</span><strong>Bogdan</strong><span class="score">25</span></div>
+        <div class="player-card"><span class="rank">#6</span><strong>Tomek</strong><span class="score">21</span></div>
     </div>
 
         <!-- END -->
@@ -133,34 +133,34 @@
 
     <script>
         
-// Updated Conference Semifinals Matchups as of May 7, 2026
+// Updated Conference Semifinals Matchups as of May 13, 2026
 const matchups = [
     // --- WESTERN CONFERENCE SEMIS ---
     { 
         conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥🔥🔥🔥", 
-        dog: "Lakers", dSeed: 4, dogTrend: "🔥❄️❄️🔥❄️", 
-        score: "1-0", status: "Game 2 Tonight (02:30 BST)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605050OKC.html"
+        dog: "Lakers", dSeed: 4, dogTrend: "❄️❄️❄️❄️❄️", 
+        score: "4-0", status: "OKC ADVANCED (SWEEP)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605120LAL.html"
     },
     { 
-        conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥🔥❄️🔥🔥", 
-        dog: "Timberwolves", dSeed: 6, dogTrend: "🔥🔥❄️🔥❄️", 
-        score: "1-1", status: "Series tied 1-1", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605070SAS.html"
+        conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥🔥❄️🔥🔥", // Won G5
+        dog: "Timberwolves", dSeed: 6, dogTrend: "❄️🔥❄️🔥❄️", // Lost G5
+        score: "3-2", status: "SAS leads 3-2 (126-97)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605130SAS.html"
     },
     
     // --- EASTERN CONFERENCE SEMIS ---
     { 
-        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥🔥", // Won last 5
-        dog: "76ers", dSeed: 7, dogTrend: "❄️🔥❄️❄️❄️", // Lost last 2
-        score: "2-0", status: "NYK leads 2-0 (108-102)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605070NYK.html"
+        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥🔥", 
+        dog: "76ers", dSeed: 7, dogTrend: "❄️❄️❄️❄️❄️", 
+        score: "4-0", status: "NYK ADVANCED (SWEEP)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605100PHI.html"
     },
     { 
-        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "❄️🔥❄️🔥🔥", 
-        dog: "Cavaliers", dSeed: 4, dogTrend: "🔥❄️🔥❄️❄️", 
-        score: "1-1", status: "Series tied 1-1 (111-101)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605060DET.html"
+        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "🔥❄️🔥❄️❄️", 
+        dog: "Cavaliers", dSeed: 4, dogTrend: "❄️🔥❄️🔥🔥", 
+        score: "1-3", status: "Game 5 Tonight (00:30 BST)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605120CLE.html"
     }
 ];
 
@@ -238,35 +238,30 @@ if (document.readyState === 'loading') {
     
 <div class="daily-update-section">
     <div class="update-card">
-        <h2>🌙 Last Night's Recap (May 7)</h2>
+        <h2>🌙 Last Night's Recap (May 13)</h2>
         
         <div class="result-item-recap">
-            <strong>Knicks 108, 76ers 102</strong>
-            <p><strong>NYK leads 2-0.</strong> Jalen Brunson is the undisputed King of New York right now. Despite Joel Embiid's 30-point effort, the Knicks' relentless defense and bench energy proved too much for Philly in the closing minutes. The series now moves to Philadelphia for a must-win Game 3.</p>
-        </div>
-
-        <div class="result-item-recap">
-            <strong>Spurs 133, Timberwolves 95</strong>
-            <p><strong>Series tied 1-1.</strong> Total annihilation. After a narrow Game 1 loss, San Antonio responded with a 38-point blowout. Victor Wembanyama put up a 19/15/2 line in limited minutes as the Spurs outscored Minnesota in every single quarter.</p>
+            <strong>Spurs 126, Timberwolves 97</strong>
+            <p><strong>SAS leads 3-2.</strong> A dominant masterclass in San Antonio. Victor Wembanyama silenced injury rumors with 27 points, 17 rebounds, and 3 blocks in 33 minutes. The Spurs blew the game open with a 36-21 second quarter and never looked back. Minnesota now heads home for a "must-win" Game 6 on Friday.</p>
         </div>
     </div>
 
     <div class="update-card">
-        <h2>🔥 Semi-Final Intel (May 7)</h2>
+        <h2>🔥 Semi-Final Intel (May 13)</h2>
         
         <div class="betting-tip">
-            <h4>Thunder vs. Lakers (Game 2)</h4>
-            <p><strong>Spread: Thunder -7.5.</strong> OKC dominated Game 1 by 18 points. LeBron and AD need a vintage performance tonight to avoid a 0-2 hole heading back to LA. The Thunder's transition points have been the deciding factor so far.</p>
+            <h4>Pistons vs. Cavaliers (Game 5)</h4>
+            <p><strong>Spread: Pistons -5.5.</strong> Despite being down 1-3, Vegas still favors the #1 seed at home. No team has ever come back from 1-3 in the 2nd round against a #4 seed, but the Pistons have to start with one win tonight to keep the dream alive.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>The "Menu" for Friday</h4>
-            <p>No games tonight after the Thunder/Lakers tip-off! Use this gap to check the **NBA 2026 Playoff Prediction Tracker**. If you have the Knicks sweeping, you're halfway to a massive point bonus.</p>
+            <h4>Western Finals Preview?</h4>
+            <p>If the Spurs close it out in 6, we are officially set for a <strong>Thunder vs. Spurs</strong> Western Conference Final. The "Wemby vs. Chet" narrative will be at an all-time high.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>Injury Alert: Joel Embiid</h4>
-            <p>Despite the loss, Embiid played 36 minutes. However, he was visibly limping post-game. With two days off before Game 3, expect his mobility to be the only thing Philly fans talk about until Saturday.</p>
+            <h4>⚠️ Bracket Alert</h4>
+            <p><strong>Marcin</strong> and <strong>Piotrek</strong> are currently holding their breath. If the Cavs win tonight, the "Pistons in the Finals" predictions—which were popular in the group—will be officially busted.</p>
         </div>
     </div>
 </div>
