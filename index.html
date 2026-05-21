@@ -107,9 +107,9 @@
 
 <!-- NEWS TICKER -->
 <div class="news-ticker">
-<marquee scrollamount="6">
-    🚨 HUGE UPSET: Cavaliers defeat #1 Pistons 104-99 in Game 7 to advance! • CONFERENCE FINALS SET: Thunder vs. Spurs in the West, Knicks vs. Cavaliers in the East • Knicks look to capitalize on 8-day rest advantage hosting Game 1 at MSG • Round 3 predictions are now open...
-</marquee>
+    <marquee scrollamount="6">
+        🚨 ECF UPDATE: Knicks protect home floor behind Brunson's 38-point gem; take 1-0 lead over Cavs • WCF UPDATE: Thunder bounce back with a 122-113 Game 2 win; series tied 1-1 heading to San Antonio • Evan Mobley drops 15 & 14 in Game 1 loss • Round 3 locked...
+    </marquee>
 </div>
 
     <!-- END -->
@@ -133,34 +133,22 @@
 
     <script>
         
-// Finalized Conference Semifinals Matchups as of May 18, 2026
+// Finalized Conference Finals Matchups & Results as of May 21, 2026
 const matchups = [
-    // --- WESTERN CONFERENCE SEMIS ---
+    // --- WESTERN CONFERENCE FINALS ---
     { 
-        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥🔥🔥🔥", 
-        dog: "Lakers", dSeed: 4, dogTrend: "❄️❄️❄️❄️❄️", 
-        score: "4-0", status: "OKC ADVANCED (SWEEP)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605120LAL.html"
-    },
-    { 
-        conf: 'WEST', fav: "Spurs", fSeed: 2, favTrend: "🔥❄️🔥🔥🔥", 
-        dog: "Timberwolves", dSeed: 6, dogTrend: "🔥❄️❄️❄️❄️", 
-        score: "4-2", status: "SAS ADVANCED (4-2)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605160MIN.html"
+        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥🔥❄️🔥", // Responded to the G1 loss with a win last night
+        dog: "Spurs", dSeed: 2, dogTrend: "🔥🔥🔥🔥❄️", // Dropped Game 2 after stealing Game 1
+        score: "1-1", status: "Series tied 1-1 (OKC won G2 122-113)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605200OKC.html"
     },
     
-    // --- EASTERN CONFERENCE SEMIS ---
+    // --- EASTERN CONFERENCE FINALS ---
     { 
-        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥🔥", 
-        dog: "76ers", dSeed: 7, dogTrend: "❄️❄️❄️❄️❄️", 
-        score: "4-0", status: "NYK ADVANCED (SWEEP)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605100PHI.html"
-    },
-    { 
-        conf: 'EAST', fav: "Pistons", fSeed: 1, favTrend: "❄️❄️🔥🔥❄️", // L (G3), L (G4), W (G5), W (G6), L (G7)
-        dog: "Cavaliers", dSeed: 4, dogTrend: "🔥🔥❄️❄️🔥", // W (G3), W (G4), L (G5), L (G6), W (G7)
-        score: "3-4", status: "CLE ADVANCED (4-3)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605170DET.html"
+        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥🔥", // Rested and lethal in Game 1
+        dog: "Cavaliers", dSeed: 4, dogTrend: "🔥❄️❄️🔥❄️", // Dropped Game 1 after the brutal 7-game series
+        score: "1-0", status: "NYK leads 1-0 (Won G1 115-104)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605200NYK.html"
     }
 ];
 
@@ -238,30 +226,30 @@ if (document.readyState === 'loading') {
     
 <div class="daily-update-section">
     <div class="update-card">
-        <h2>🌙 Game 7 Recap (May 17)</h2>
+        <h2>🌙 The Conference Finals Reality (May 20-21)</h2>
         
         <div class="result-item-recap">
-            <strong>Cavaliers 104, Pistons 99</strong>
-            <p><strong>SERIES OVER: CLE WINS 4-3.</strong> The #4 seed pulls off the ultimate heist! Walking into a hostile Little Caesars Arena, Cleveland absorbed Detroit's early runs and executed flawlessly down the stretch. Donovan Mitchell was cold-blooded in the 4th quarter, while Jarrett Allen locked down the paint to secure the road victory. The #1 seeded Pistons are officially eliminated in a heartbreaking end to their season.</p>
+            <strong>Knicks 115, Cavaliers 104 (ECF Game 1)</strong>
+            <p>The rest advantage was real. Jalen Brunson dominated the garden floor with a spectacular 38-point, 6-assist masterclass. Cleveland fought valiantly behind Donovan Mitchell's 29 points, but the Cavs' tired legs showed in the second half. Karl-Anthony Towns anchored the glass with a 13-point, 13-rebound double-double to lock it down.</p>
+        </div>
+
+        <div class="result-item-recap">
+            <strong>Thunder 122, Spurs 113 (WCF Game 2)</strong>
+            <p>OKC avoids the 0-2 disaster! Shai Gilgeous-Alexander and the Thunder adjusted beautifully, picking up their defensive intensity to frustrate Victor Wembanyama on the switches. The series travels to San Antonio tied up at 1-1.</p>
         </div>
     </div>
 
     <div class="update-card">
-        <h2>🔥 Conference Finals Intel (May 18)</h2>
+        <h2>🔥 Group Pool Betting Intel</h2>
         
         <div class="betting-tip">
-            <h4>Eastern Conference Finals: Knicks vs. Cavaliers</h4>
-            <p><strong>The Rest Factor:</strong> The Knicks have been resting since May 10. They will host Game 1 at Madison Square Garden with a massive physical advantage over a Cavaliers squad coming off a grueling 7-game war. Look for New York to push the pace early against Cleveland's tired legs.</p>
+            <h4>Knicks vs. Cavaliers (Game 2 Friday)</h4>
+            <p><strong>The Adjustments Matrix:</strong> Cleveland's perimeter rotations were a step slow in Game 1. Look for James Harden to handle more distribution roles early on Friday to preserve Donovan Mitchell's legs for the 4th quarter push.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>Western Conference Finals: Thunder vs. Spurs</h4>
-            <p><strong>The Heavyweights:</strong> OKC enters 8-0 in the playoffs, while San Antonio just suffocated the Timberwolves. The "Chet vs. Wemby" matchup will dictate the series. The Thunder open as slight favorites due to home-court advantage.</p>
-        </div>
-
-        <div class="betting-tip">
-            <h4>⚠️ Prediction Tracker Finalization</h4>
-            <p>With Round 2 officially in the books, all multiplier points are locked. Anyone who picked **Cavs in 7** just struck gold. Check the leaderboard today—the group needs to finalize their Conference Finals picks before Game 1 in the West tips off tomorrow!</p>
+            <h4>⚠️ Leaderboard Maximum Leverage</h4>
+            <p>Friendly reminder for the chat: **Conference Finals points carry double weighting.** Getting the exact game-count right on these two series (e.g., Knicks in 6 vs. Cavs in 7) will completely decide who walks away with the £60 pot. Keep your trackers updated!</p>
         </div>
     </div>
 </div>
