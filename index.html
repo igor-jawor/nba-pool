@@ -108,7 +108,7 @@
 <!-- NEWS TICKER -->
 <div class="news-ticker">
     <marquee scrollamount="6">
-        🚨 BING BONG: New York Knicks sweep Cavaliers with a 130-93 Game 4 blowout to advance to the NBA Finals! • Jalen Brunson named Eastern Conference Finals MVP • TONIGHT: Thunder and Spurs square off in critical Game 5 tiebreaker (01:30 BST) • KAT logs 19 & 14 as Knicks dominate second-chance points 32-5...
+        🚨 WCF UPDATE: Thunder secure vital Game 5 victory to take a 3-2 lead over the Spurs • ELIMINATION WATCH: San Antonio hosts OKC for a do-or-die Game 6 on Thursday (01:30 BST) • New York Knicks continue extended rest window ahead of June 4 Finals opener...
     </marquee>
 </div>
 
@@ -120,9 +120,9 @@
         <div class="player-card"><span class="rank">#1</span><strong>Igor</strong><span class="score">48</span></div>
         <div class="player-card"><span class="rank">#2</span><strong>Marcin K. (Kmieciu)</strong><span class="score">44</span></div>
         <div class="player-card"><span class="rank">#3</span><strong>Marcin</strong><span class="score">41</span></div>
-        <div class="player-card"><span class="rank">#4</span><strong>Tomek</strong><span class="score">38</span></div>
-        <div class="player-card"><span class="rank">#5</span><strong>Piotrek</strong><span class="score">35</span></div>
-        <div class="player-card"><span class="rank">#6</span><strong>Bogdan</strong><span class="score">29</span></div>
+        <div class="player-card"><span class="rank">#4</span><strong>Tomek</strong><span class="score">30</span></div>
+        <div class="player-card"><span class="rank">#5</span><strong>Piotrek</strong><span class="score">27</span></div>
+        <div class="player-card"><span class="rank">#6</span><strong>Bogdan</strong><span class="score">21</span></div>
     </div>
 
         <!-- END -->
@@ -134,13 +134,13 @@
     <script>
 // START
         
-// Conference Finals Matchups & Status as of Tuesday, May 26, 2026
+// Finalized Conference Finals Matchups & Results as of May 27, 2026
 const matchups = [
-    // --- WESTERN CONFERENCE FINALS (ACTIVE) ---
+    // --- WESTERN CONFERENCE FINALS ---
     { 
-        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥❄️🔥❄️", 
-        dog: "Spurs", dSeed: 2, dogTrend: "🔥🔥🔥❄️🔥", 
-        score: "2-2", status: "🚨 Game 5 Tonight in Oklahoma City (01:30 BST)", 
+        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥❄️🔥🔥", // Won a massive Game 5 at home
+        dog: "Spurs", dSeed: 2, dogTrend: "🔥🔥🔥❄️❄️", // Facing elimination
+        score: "3-2", status: "OKC leads 3-2 • Game 6 Thursday in San Antonio (01:30 BST)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605260OKC.html"
     },
     
@@ -148,7 +148,7 @@ const matchups = [
     { 
         conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥", // 4-0 SWEEP
         dog: "Cavaliers", dSeed: 4, dogTrend: "❄️❄️❄️❄️", 
-        score: "4-0", status: "🏆 NYK ADVANCED TO NBA FINALS (🏆 EAST MVPS)", 
+        score: "4-0", status: "🏆 NYK ADVANCED TO NBA FINALS", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605250CLE.html"
     }
 ];
@@ -226,26 +226,33 @@ if (document.readyState === 'loading') {
 <!-- DAILY UPDATE SECTION -->
     
 <div class="daily-update-section">
-    <div class="update-card champion-card">
-        <h2>🏆 EASTERN CONFERENCE CHAMPIONS: New York Knicks</h2>
+    <div class="update-card">
+        <h2>🌙 Last Night's Recap (WCF Game 5)</h2>
         
         <div class="result-item-recap">
-            <strong>Knicks 130, Cavaliers 93 (Game 4 Final)</strong>
-            <p><strong>NYK wins series 4-0.</strong> For the first time since 1999, the New York Knicks are going to the NBA Finals! Game 4 was a total demolition from the opening tip, with the Knicks leading by as many as 45 points. Karl-Anthony Towns dominated the interior with 19 points and 14 rebounds, leading a physical onslaught where New York outscored Cleveland 32-5 in second-chance points. Donovan Mitchell scored 31 in a lonely effort for the deflated Cavs. Jalen Brunson was officially named <strong>Eastern Conference Finals MVP</strong>.</p>
+            <strong>Thunder Victory (OKC leads 3-2)</strong>
+            <p>The Thunder protected their home floor in a massive pivotal tiebreaker! By securing Game 5, OKC now taps into an elite historical trend: teams taking a 3-2 lead in a deadlocked best-of-seven series go on to win and advance over 82% of the time. The series now shifts back to the Frost Bank Center in Texas, where the Spurs face absolute elimination tomorrow night.</p>
+        </div>
+    </div>
+
+    <div class="update-card champion-card" style="border-left: 5px solid #F58426;">
+        <h2>🏆 EASTERN CONFERENCE CHAMPIONS: New York Knicks</h2>
+        <div class="result-item-recap">
+            <strong>Knicks Await the West (Swept Cleveland 4-0)</strong>
+            <p>While the West continues to beat each other up, Jalen Brunson and the Knicks are building a massive rest advantage. By the time the NBA Finals tip off on June 4, New York will have had nearly 9 full days of pure recovery. Will it be rest or rust?</p>
         </div>
     </div>
 
     <div class="update-card">
-        <h2>🔥 Tonight's West Game 5 Intel (May 26)</h2>
-        
+        <h2>🔥 Conference Finals Intel & Pool Metrics</h2>
         <div class="betting-tip">
-            <h4>Thunder vs. Spurs (Game 5 Tonight)</h4>
-            <p><strong>Spread: Thunder -3.5 | Over/Under: 213.5.</strong> With the East already wrapped up, all eyes switch to Oklahoma City. This 2-2 tiebreaker is historically decisive—the winner of Game 5 in a deadlocked series goes on to advance 82% of the time. Look for OKC to use their transition offense to test Victor Wembanyama's stamina early.</p>
+            <h4>Spurs vs. Thunder (Game 6 Thursday)</h4>
+            <p><strong>Early Outlook:</strong> Expect San Antonio to open as slight home favorites strictly due to survival desperation. Victor Wembanyama will need to play an absolute iron-man game to push this to a Game 7. If OKC's backcourt shoots efficiently on the road, they close it out tomorrow.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>⚠️ Leaderboard Payout Maximum Impact</h4>
-            <p>The sweep is a massive bracket-breaker! Anyone in your pool who boldly locked in **Knicks in 4** just secured an insurmountable points premium for the £60 pot. Check the leaderboard standings immediately to see who is leading the pack into June.</p>
+            <h4>⚠️ Leaderboard Pressure Check</h4>
+            <p>With OKC up 3-2, anyone in the pool who locked in **Thunder in 6** is currently sitting on massive projected equity. If the Spurs force a Game 7, the entire trailing pack gets a chaotic lifeline for the £60 pot.</p>
         </div>
     </div>
 </div>
