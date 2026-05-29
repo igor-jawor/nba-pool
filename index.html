@@ -107,9 +107,9 @@
 
 <!-- NEWS TICKER -->
 <div class="news-ticker">
-    <marquee scrollamount="6">
-        🚨 WCF UPDATE: Thunder secure vital Game 5 victory to take a 3-2 lead over the Spurs • ELIMINATION WATCH: San Antonio hosts OKC for a do-or-die Game 6 on Thursday (01:30 BST) • New York Knicks continue extended rest window ahead of June 4 Finals opener...
-    </marquee>
+<marquee scrollamount="6">
+    🚨 MAXIMUM DRAMA: Spurs defeat Thunder in Game 6 to force a winner-take-all Game 7 this Sunday in OKC (01:30 BST) • New York Knicks' rest advantage grows to 5 full days as they wait out the West bloodbath • Brackets will be decided on Sunday's final buzzer...
+</marquee>
 </div>
 
     <!-- END -->
@@ -120,9 +120,9 @@
         <div class="player-card"><span class="rank">#1</span><strong>Igor</strong><span class="score">48</span></div>
         <div class="player-card"><span class="rank">#2</span><strong>Marcin K. (Kmieciu)</strong><span class="score">44</span></div>
         <div class="player-card"><span class="rank">#3</span><strong>Marcin</strong><span class="score">41</span></div>
-        <div class="player-card"><span class="rank">#4</span><strong>Tomek</strong><span class="score">30</span></div>
-        <div class="player-card"><span class="rank">#5</span><strong>Piotrek</strong><span class="score">27</span></div>
-        <div class="player-card"><span class="rank">#6</span><strong>Bogdan</strong><span class="score">21</span></div>
+        <div class="player-card"><span class="rank">#4</span><strong>Tomek</strong><span class="score">38</span></div>
+        <div class="player-card"><span class="rank">#5</span><strong>Piotrek</strong><span class="score">35</span></div>
+        <div class="player-card"><span class="rank">#6</span><strong>Bogdan</strong><span class="score">29</span></div>
     </div>
 
         <!-- END -->
@@ -134,19 +134,19 @@
     <script>
 // START
         
-// Finalized Conference Finals Matchups & Results as of May 27, 2026
+// Conference Finals Matchups & Status as of May 29, 2026
 const matchups = [
-    // --- WESTERN CONFERENCE FINALS ---
+    // --- WESTERN CONFERENCE FINALS (ACTIVE) ---
     { 
-        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥❄️🔥🔥", // Won a massive Game 5 at home
-        dog: "Spurs", dSeed: 2, dogTrend: "🔥🔥🔥❄️❄️", // Facing elimination
-        score: "3-2", status: "OKC leads 3-2 • Game 6 Thursday in San Antonio (01:30 BST)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605260OKC.html"
+        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥❄️🔥🔥❄️", 
+        dog: "Spurs", dSeed: 2, dogTrend: "🔥🔥🔥❄️❄️🔥", // Defended home court
+        score: "3-3", status: "🚨 WINNER-TAKE-ALL GAME 7 SUNDAY (01:30 BST)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605280SAS.html"
     },
     
     // --- EASTERN CONFERENCE FINALS (CONCLUDED) ---
     { 
-        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥", // 4-0 SWEEP
+        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥", 
         dog: "Cavaliers", dSeed: 4, dogTrend: "❄️❄️❄️❄️", 
         score: "4-0", status: "🏆 NYK ADVANCED TO NBA FINALS", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605250CLE.html"
@@ -226,33 +226,19 @@ if (document.readyState === 'loading') {
 <!-- DAILY UPDATE SECTION -->
     
 <div class="daily-update-section">
-    <div class="update-card">
-        <h2>🌙 Last Night's Recap (WCF Game 5)</h2>
-        
+    <div class="update-card" style="border-left: 5px solid #0057B8;">
+        <h2>🚨 GAME 7 FORCED: San Antonio Survives!</h2>
         <div class="result-item-recap">
-            <strong>Thunder Victory (OKC leads 3-2)</strong>
-            <p>The Thunder protected their home floor in a massive pivotal tiebreaker! By securing Game 5, OKC now taps into an elite historical trend: teams taking a 3-2 lead in a deadlocked best-of-seven series go on to win and advance over 82% of the time. The series now shifts back to the Frost Bank Center in Texas, where the Spurs face absolute elimination tomorrow night.</p>
-        </div>
-    </div>
-
-    <div class="update-card champion-card" style="border-left: 5px solid #F58426;">
-        <h2>🏆 EASTERN CONFERENCE CHAMPIONS: New York Knicks</h2>
-        <div class="result-item-recap">
-            <strong>Knicks Await the West (Swept Cleveland 4-0)</strong>
-            <p>While the West continues to beat each other up, Jalen Brunson and the Knicks are building a massive rest advantage. By the time the NBA Finals tip off on June 4, New York will have had nearly 9 full days of pure recovery. Will it be rest or rust?</p>
+            <strong>Spurs Protect Home Court (Series Tied 3-3)</strong>
+            <p>There are no sweeter words in sports than Game 7. Faced with absolute elimination on their home floor last night, the young Spurs completely leaned into their defensive identity. Victor Wembanyama altered everything in the paint, shutting down the Thunder's interior attack to force a decisive, winner-take-all Sunday night showdown back in Oklahoma City.</p>
         </div>
     </div>
 
     <div class="update-card">
-        <h2>🔥 Conference Finals Intel & Pool Metrics</h2>
+        <h2>🔥 Game 7 Ultimate Intel & Pool Multipliers</h2>
         <div class="betting-tip">
-            <h4>Spurs vs. Thunder (Game 6 Thursday)</h4>
-            <p><strong>Early Outlook:</strong> Expect San Antonio to open as slight home favorites strictly due to survival desperation. Victor Wembanyama will need to play an absolute iron-man game to push this to a Game 7. If OKC's backcourt shoots efficiently on the road, they close it out tomorrow.</p>
-        </div>
-
-        <div class="betting-tip">
-            <h4>⚠️ Leaderboard Pressure Check</h4>
-            <p>With OKC up 3-2, anyone in the pool who locked in **Thunder in 6** is currently sitting on massive projected equity. If the Spurs force a Game 7, the entire trailing pack gets a chaotic lifeline for the £60 pot.</p>
+            <h4>Thunder vs. Spurs (Game 7 Sunday)</h4>
+            <p>The stakes couldn't be higher. Historically, home teams win NBA Game 7s roughly 75% of the time, putting the statistical advantage squarely back with OKC. However, with double multipliers active for our 6-man pool, anyone who predicted a **7-game series** is currently sitting on an absolute mountain of projected equity. The leaderboard will be completely rewritten on Sunday night.</p>
         </div>
     </div>
 </div>
