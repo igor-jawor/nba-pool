@@ -107,9 +107,9 @@
 
 <!-- NEWS TICKER -->
 <div class="news-ticker">
-<marquee scrollamount="6">
-    🚨 MAXIMUM DRAMA: Spurs defeat Thunder in Game 6 to force a winner-take-all Game 7 this Sunday in OKC (01:30 BST) • New York Knicks' rest advantage grows to 5 full days as they wait out the West bloodbath • Brackets will be decided on Sunday's final buzzer...
-</marquee>
+    <marquee scrollamount="6">
+        🚨 TEXAS STORM: San Antonio Spurs defeat Thunder 111-103 in Game 7 to clinch the West and advance to the NBA Finals vs. the New York Knicks • Victor Wembanyama logs 22 and 7 as Julian Champagnie hits six triples • Jalen Brunson and the fresh Knicks open as heavy Game 1 home favorites for Wednesday's opener at Madison Square Garden...
+    </marquee>
 </div>
 
     <!-- END -->
@@ -117,11 +117,11 @@
 
     <h2 style="border-left: 4px solid var(--primary); padding-left: 15px;">Group Standings</h2>
     <div class="standings-container">
-        <div class="player-card"><span class="rank">#1</span><strong>Igor</strong><span class="score">48</span></div>
-        <div class="player-card"><span class="rank">#2</span><strong>Marcin K. (Kmieciu)</strong><span class="score">44</span></div>
-        <div class="player-card"><span class="rank">#3</span><strong>Marcin</strong><span class="score">41</span></div>
-        <div class="player-card"><span class="rank">#4</span><strong>Tomek</strong><span class="score">38</span></div>
-        <div class="player-card"><span class="rank">#5</span><strong>Piotrek</strong><span class="score">35</span></div>
+        <div class="player-card"><span class="rank">#1</span><strong>Igor</strong><span class="score">40</span></div>
+        <div class="player-card"><span class="rank">#2</span><strong>Tomek</strong><span class="score">39</span></div>
+        <div class="player-card"><span class="rank">#3</span><strong>Marcin K. (Kmieciu)</strong><span class="score">36</span></div>
+        <div class="player-card"><span class="rank">#4</span><strong>Piotrek</strong><span class="score">35</span></div>
+        <div class="player-card"><span class="rank">#5</span><strong>Marcin</strong><span class="score">33</span></div>
         <div class="player-card"><span class="rank">#6</span><strong>Bogdan</strong><span class="score">29</span></div>
     </div>
 
@@ -134,21 +134,21 @@
     <script>
 // START
         
-// Conference Finals Matchups & Status as of May 29, 2026
+// Finalized 2026 Conference Finals Results as of Monday, June 1, 2026
 const matchups = [
-    // --- WESTERN CONFERENCE FINALS (ACTIVE) ---
+    // --- WESTERN CONFERENCE FINALS (CONCLUDED) ---
     { 
-        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥❄️🔥🔥❄️", 
-        dog: "Spurs", dSeed: 2, dogTrend: "🔥🔥🔥❄️❄️🔥", // Defended home court
-        score: "3-3", status: "🚨 WINNER-TAKE-ALL GAME 7 SUNDAY (01:30 BST)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605280SAS.html"
+        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥❄️🔥🔥❄️❄️", // Dropped Games 6 and 7
+        dog: "Spurs", dSeed: 2, dogTrend: "🔥🔥🔥❄️❄️🔥🔥", // Won back-to-back elimination games
+        score: "3-4", status: "🏆 SAS ADVANCED (4-3)", 
+        h2hLink: "https://www.basketball-reference.com/boxscores/202605300OKC.html"
     },
     
     // --- EASTERN CONFERENCE FINALS (CONCLUDED) ---
     { 
-        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥", 
+        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥", // Immaculate 4-0 sweep
         dog: "Cavaliers", dSeed: 4, dogTrend: "❄️❄️❄️❄️", 
-        score: "4-0", status: "🏆 NYK ADVANCED TO NBA FINALS", 
+        score: "4-0", status: "🏆 NYK ADVANCED (4-0)", 
         h2hLink: "https://www.basketball-reference.com/boxscores/202605250CLE.html"
     }
 ];
@@ -226,19 +226,28 @@ if (document.readyState === 'loading') {
 <!-- DAILY UPDATE SECTION -->
     
 <div class="daily-update-section">
-    <div class="update-card" style="border-left: 5px solid #0057B8;">
-        <h2>🚨 GAME 7 FORCED: San Antonio Survives!</h2>
+    <!-- WCF Game 7 Championship Card -->
+    <div class="update-card champion-card" style="border-left: 5px solid #0057B8;">
+        <h2>🏆 WESTERN CONFERENCE CHAMPIONS: San Antonio Spurs</h2>
+        
         <div class="result-item-recap">
-            <strong>Spurs Protect Home Court (Series Tied 3-3)</strong>
-            <p>There are no sweeter words in sports than Game 7. Faced with absolute elimination on their home floor last night, the young Spurs completely leaned into their defensive identity. Victor Wembanyama altered everything in the paint, shutting down the Thunder's interior attack to force a decisive, winner-take-all Sunday night showdown back in Oklahoma City.</p>
+            <strong>Spurs 111, Thunder 103 (Game 7 Final)</strong>
+            <p><strong>SAS WINS SERIES 4-3.</strong> The sophomore masterpiece is complete! The young Spurs walked right into Oklahoma City and executed flawlessly to dethrone the reigning champions on their own floor. Victor Wembanyama delivered 22 points and 7 rebounds, backed by Julian Champagnie's blistering 20 points (including six 3-pointers). Shai Gilgeous-Alexander put up a heroic 35 points and 9 assists for OKC, but the Thunder's supporting cast stalled against San Antonio's length. The Spurs head to the NBA Finals for the first time since 2014!</p>
         </div>
     </div>
 
+    <!-- Tonight's NBA Finals Tactical Preview -->
     <div class="update-card">
-        <h2>🔥 Game 7 Ultimate Intel & Pool Multipliers</h2>
+        <h2>🔥 The NBA Finals Matrix: Knicks vs. Spurs</h2>
+        
         <div class="betting-tip">
-            <h4>Thunder vs. Spurs (Game 7 Sunday)</h4>
-            <p>The stakes couldn't be higher. Historically, home teams win NBA Game 7s roughly 75% of the time, putting the statistical advantage squarely back with OKC. However, with double multipliers active for our 6-man pool, anyone who predicted a **7-game series** is currently sitting on an absolute mountain of projected equity. The leaderboard will be completely rewritten on Sunday night.</p>
+            <h4>The Great Rest vs. Momentum Gap (Game 1 Wednesday)</h4>
+            <p><strong>The Operational Disparity:</strong> The Knicks have been relaxing and scheming since completing their clean sweep on May 25, banking an incredible 9-day body recovery gap. The young Spurs are running on pure psychological adrenaline after enduring a grueling 7-game war. Look for New York's physical defensive depth to try and wear down Wemby's legs early in Game 1.</p>
+        </div>
+
+        <div class="betting-tip">
+            <h4>⚠️ Leaderboard Bracket Shattered!</h4>
+            <p>Round 3 point tracking is officially locked. Because the Conference Finals carried double-point multipliers, anyone in the pool who boldly locked in **Knicks 4-0** or **Spurs in 7** just walked away with an absolute goldmine of equity. The grand finale prediction sheets for the £60 pot are open now—get your final series lengths logged before Wednesday night's tip-off!</p>
         </div>
     </div>
 </div>
