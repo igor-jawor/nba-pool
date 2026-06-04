@@ -107,8 +107,8 @@
 
 <!-- NEWS TICKER -->
 <div class="news-ticker">
-    <marquee scrollamount="6">
-        🚨 TEXAS STORM: San Antonio Spurs defeat Thunder 111-103 in Game 7 to clinch the West and advance to the NBA Finals vs. the New York Knicks • Victor Wembanyama logs 22 and 7 as Julian Champagnie hits six triples • Jalen Brunson and the fresh Knicks open as heavy Game 1 home favorites for Wednesday's opener at Madison Square Garden...
+    <marquee scrollamount="5">
+        🚨 FINALS UPDATE: New York Knicks steal Game 1 with a gritty 105-95 road win over the San Antonio Spurs • Jalen Brunson drops 30 points as Knicks finish on an 11-0 run • Wemby logs 26 PTS, 12 REB, & 3 BLK but records 6 turnovers • Game 2 tips off Friday in Texas...
     </marquee>
 </div>
 
@@ -134,24 +134,29 @@
     <script>
 // START
         
-// Finalized 2026 Conference Finals Results as of Monday, June 1, 2026
-const matchups = [
-    // --- WESTERN CONFERENCE FINALS (CONCLUDED) ---
-    { 
-        conf: 'WEST', fav: "Thunder", fSeed: 1, favTrend: "🔥🔥❄️🔥🔥❄️❄️", // Dropped Games 6 and 7
-        dog: "Spurs", dSeed: 2, dogTrend: "🔥🔥🔥❄️❄️🔥🔥", // Won back-to-back elimination games
-        score: "3-4", status: "🏆 SAS ADVANCED (4-3)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605300OKC.html"
-    },
+// Active NBA Finals Dashboard State - Updated Thursday, June 4, 2026
+const nbaFinalsTracker = {
+    series: "2026 NBA Finals",
+    matchup: "Knicks vs. Spurs",
+    score: "1-0",
+    status: "NYK leads 1-0 • Game 2 Friday in San Antonio (01:30 BST)",
     
-    // --- EASTERN CONFERENCE FINALS (CONCLUDED) ---
-    { 
-        conf: 'EAST', fav: "Knicks", fSeed: 3, favTrend: "🔥🔥🔥🔥", // Immaculate 4-0 sweep
-        dog: "Cavaliers", dSeed: 4, dogTrend: "❄️❄️❄️❄️", 
-        score: "4-0", status: "🏆 NYK ADVANCED (4-0)", 
-        h2hLink: "https://www.basketball-reference.com/boxscores/202605250CLE.html"
-    }
-];
+    // Form tracking (🔥 for win, ❄️ for loss)
+    knicksTrend: "🔥🔥🔥🔥🔥", // 12-game win streak intact
+    spursTrend: "❄️",          // Lost home court advantage in Game 1
+
+    game1BoxScore: {
+        away: { team: "Knicks", score: 105, leader: "Jalen Brunson (30 PTS, 12-31 FG)" },
+        home: { team: "Spurs", score: 95, leader: "Victor Wembanyama (26 PTS, 12 REB, 3 BLK)" },
+        keyStat: "Josh Hart: 15 REB, 6 AST, 4 STL (+22 plus/minus)"
+    },
+
+    upcomingSchedule: [
+        { game: "Game 2", date: "Friday, June 5", venue: "Frost Bank Center (SAS)", time: "01:30 BST" },
+        { game: "Game 3", date: "Monday, June 8", venue: "Madison Square Garden (NYK)", time: "01:30 BST" },
+        { game: "Game 4", date: "Wednesday, June 10", venue: "Madison Square Garden (NYK)", time: "01:30 BST" }
+    ]
+};
 
         // END
     function render() {
@@ -226,29 +231,32 @@ if (document.readyState === 'loading') {
 <!-- DAILY UPDATE SECTION -->
     
 <div class="daily-update-section">
-    <!-- WCF Game 7 Championship Card -->
-    <div class="update-card champion-card" style="border-left: 5px solid #0057B8;">
-        <h2>🏆 WESTERN CONFERENCE CHAMPIONS: San Antonio Spurs</h2>
+    <div class="update-card" style="border-left: 5px solid #F58426;">
+        <h2>🗽 Game 1 Shock: Knicks Overcome the Noise!</h2>
         
         <div class="result-item-recap">
-            <strong>Spurs 111, Thunder 103 (Game 7 Final)</strong>
-            <p><strong>SAS WINS SERIES 4-3.</strong> The sophomore masterpiece is complete! The young Spurs walked right into Oklahoma City and executed flawlessly to dethrone the reigning champions on their own floor. Victor Wembanyama delivered 22 points and 7 rebounds, backed by Julian Champagnie's blistering 20 points (including six 3-pointers). Shai Gilgeous-Alexander put up a heroic 35 points and 9 assists for OKC, but the Thunder's supporting cast stalled against San Antonio's length. The Spurs head to the NBA Finals for the first time since 2014!</p>
+            <strong>New York Knicks 105, San Antonio Spurs 95 (NYK Leads 1-0)</strong>
+            <p>The rest vs. rhythm debate has a definitive opening answer! Despite trailing by as many as 14 points in the third quarter, the Knicks used a physical, relentless defensive framework to close the game on an 11-0 run. Jalen Brunson led all scorers with 30 points, while Karl-Anthony Towns anchored the inside with 18 points and 12 rebounds. Josh Hart was the unsung hero of the evening, putting up a massive +22 plus-minus with 15 boards and 4 steals.</p>
         </div>
     </div>
 
-    <!-- Tonight's NBA Finals Tactical Preview -->
-    <div class="update-card">
-        <h2>🔥 The NBA Finals Matrix: Knicks vs. Spurs</h2>
+    <div class="update-card" style="border-left: 5px solid #EF426F;">
+        <h2>📊 Game 1 Statistical Analytics</h2>
         
         <div class="betting-tip">
-            <h4>The Great Rest vs. Momentum Gap (Game 1 Wednesday)</h4>
-            <p><strong>The Operational Disparity:</strong> The Knicks have been relaxing and scheming since completing their clean sweep on May 25, banking an incredible 9-day body recovery gap. The young Spurs are running on pure psychological adrenaline after enduring a grueling 7-game war. Look for New York's physical defensive depth to try and wear down Wemby's legs early in Game 1.</p>
+            <h4>The Turnover Tax</h4>
+            <p>San Antonio shot just 36% from the floor and coughed up 13 turnovers—6 coming from Victor Wembanyama under heavy blitzes from OG Anunoby and Josh Hart. New York capitalized heavily, scoring 19 points off turnovers compared to San Antonio's 14.</p>
         </div>
 
         <div class="betting-tip">
-            <h4>⚠️ Leaderboard Bracket Shattered!</h4>
-            <p>Round 3 point tracking is officially locked. Because the Conference Finals carried double-point multipliers, anyone in the pool who boldly locked in **Knicks 4-0** or **Spurs in 7** just walked away with an absolute goldmine of equity. The grand finale prediction sheets for the £60 pot are open now—get your final series lengths logged before Wednesday night's tip-off!</p>
+            <h4>Stephon Castle's Bright Spot</h4>
+            <p>Despite the loss, Spurs rookie Stephon Castle showed absolute fearless composure on the grand stage, chipping in 17 points and 8 rebounds in 34 minutes of action.</p>
         </div>
+    </div>
+
+    <div class="update-card champion-card" style="border-left: 5px solid #5a2d81;">
+        <h2>⚠️ POOL LEADERBOARD ALARM</h2>
+        <p>The prediction window has officially slammed shut! With the Knicks breaking history to become the first team ever to beat San Antonio in a Finals Game 1, anyone who logged a **Knicks Sweep** or **Knicks in 5** has locked in a massive psychological advantage. The £60 prize tracking is getting fiercely intense.</p>
     </div>
 </div>
     
