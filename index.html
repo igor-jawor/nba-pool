@@ -207,15 +207,17 @@ const nbaFinalsTracker = {
 };
 
 function renderLiveBrackets() {
-    const container = document.getElementById('live-series-brackets'); 
+    // Target your main layout block directly instead of a missing ID
+    const container = document.querySelector('.daily-update-section'); 
     if (!container) return;
 
-    // Clear old elements
-    container.innerHTML = '';
+    // Remove any previously rendered widget to prevent duplicates on refresh
+    const oldWidget = document.querySelector('.finals-scoreboard-widget');
+    if (oldWidget) oldWidget.remove();
 
-    // Generate Finals Scoreboard Widget
+    // Create the Finals Scoreboard Widget element block
     const finalsWidget = document.createElement('div');
-    finalsWidget.className = 'finals-scoreboard-widget'; // Use your existing layout classes
+    finalsWidget.className = 'finals-scoreboard-widget';
     
     finalsWidget.innerHTML = `
         <div class="series-header">
@@ -224,7 +226,6 @@ function renderLiveBrackets() {
         </div>
         
         <div class="teams-matchup-container">
-            <!-- Away Team: Knicks -->
             <div class="team-row-display">
                 <div class="team-info">
                     <span class="trend-emoji">${nbaFinalsTracker.knicksTrend}</span>
@@ -233,7 +234,6 @@ function renderLiveBrackets() {
                 <div class="team-score-badge highlight-win">${nbaFinalsTracker.game1BoxScore.away.score}</div>
             </div>
             
-            <!-- Home Team: Spurs -->
             <div class="team-row-display">
                 <div class="team-info">
                     <span class="trend-emoji">${nbaFinalsTracker.spursTrend}</span>
@@ -249,10 +249,10 @@ function renderLiveBrackets() {
         </div>
     `;
 
-    container.appendChild(finalsWidget);
+    // Automatically place it as the absolute first item in the layout matrix column!
+    container.insertBefore(finalsWidget, container.firstChild);
 }
 
-// Fire the function on document load
 document.addEventListener('DOMContentLoaded', renderLiveBrackets);
         
 async function fetchRSS() {
