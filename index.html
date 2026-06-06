@@ -186,78 +186,90 @@
     <script>
 // START
         
-// Verified 2026 NBA Finals Data State - Updated Saturday, June 6, 2026
+// Cleaned state layout configuration
 const nbaFinalsTracker = {
     series: "2026 NBA Finals",
     matchup: "Knicks vs. Spurs",
     score: "2-0",
     status: "NYK leads 2-0 • Game 3 Monday at Madison Square Garden (01:30 BST)",
-    knicksTrend: "🔥🔥🔥🔥🔥🔥", // 13 straight postseason wins
-    spursTrend: "❄️❄️",          // Defended home court zero times
+    knicksTrend: "🔥🔥🔥🔥🔥🔥",
+    spursTrend: "❄️❄️",
     
+    // Explicitly using game2BoxScore fields safely
     game2BoxScore: {
-        away: { team: "Knicks", score: 105, leader: "Karl-Anthony Towns (21 PTS, 13 REB, 4 AST)" },
-        home: { team: "Spurs", score: 104, leader: "Victor Wembanyama (29 PTS, 9 REB, 4 BLK)" },
-        keyStat: "Mikal Bridges: 20 PTS, 6 REB, 6 AST | Brunson: 20 PTS, 5 STL"
-    },
-    upcomingSchedule: [
-        { game: "Game 3", date: "Monday, June 8", venue: "Madison Square Garden (NYK)", time: "01:30 BST" },
-        { game: "Game 4", date: "Wednesday, June 10", venue: "Madison Square Garden (NYK)", time: "01:30 BST" },
-        { game: "Game 5*", date: "Saturday, June 13", venue: "Frost Bank Center (SAS)", time: "01:30 BST" }
-    ]
+        away: { team: "Knicks", score: 105, leader: "Karl-Anthony Towns (21 PTS, 13 REB)" },
+        home: { team: "Spurs", score: 104, leader: "Victor Wembanyama (29 PTS, 9 REB)" },
+        keyStat: "Mikal Bridges: 20 PTS | Jalen Brunson: 20 PTS, 5 STL"
+    }
 };
 
 function renderLiveBrackets() {
-    // Dynamically inject layout card right above text bulletins
     const container = document.querySelector('.daily-update-section'); 
     if (!container) return;
 
+    // Remove any ghost nodes to prevent double layout rendering
     const oldWidget = document.querySelector('.finals-scoreboard-widget');
     if (oldWidget) oldWidget.remove();
 
     const finalsWidget = document.createElement('div');
     finalsWidget.className = 'finals-scoreboard-widget';
     
+    // Hardcoded safety defaults to prevent structural script crashing
+    const awayTeam = nbaFinalsTracker.game2BoxScore?.away?.team || "Knicks";
+    const awayScore = nbaFinalsTracker.game2BoxScore?.away?.score || 105;
+    const homeTeam = nbaFinalsTracker.game2BoxScore?.home?.team || "Spurs";
+    const homeScore = nbaFinalsTracker.game2BoxScore?.home?.score || 104;
+    
     finalsWidget.innerHTML = `
-        <div class="series-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #2d2d2d; padding-bottom: 8px; margin-bottom: 12px;">
-            <span class="badge-live" style="background: #EF426F; color: #fff; padding: 2px 8px; border-radius: 4px; font-size: 0.85rem; font-weight: bold;">🏆 ${nbaFinalsTracker.series}</span>
-            <span class="series-status-text" style="color: #aaa; font-size: 0.9rem;">${nbaFinalsTracker.status}</span>
+        <div class="series-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 14px;">
+            <span class="badge-live" style="background: #EF426F; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; uppercase;">🏆 ${nbaFinalsTracker.series}</span>
+            <span class="series-status-text" style="color: #F58426; font-size: 0.9rem; font-weight: 600;">${nbaFinalsTracker.status}</span>
         </div>
         
-        <div class="teams-matchup-container" style="display: flex; flex-direction: column; gap: 8px;">
+        <div class="teams-matchup-container" style="display: flex; flex-direction: column; gap: 12px; padding: 4px 0;">
+            <!-- Knicks Panel Row -->
             <div class="team-row-display" style="display: flex; justify-content: space-between; align-items: center;">
-                <div class="team-info">
-                    <span class="trend-emoji">${nbaFinalsTracker.knicksTrend}</span>
-                    <strong class="team-name" style="color: #fff; margin-left: 6px;">${nbaFinalsTracker.game1BoxScore?.away?.team || 'Knicks'}</strong>
+                <div class="team-info" style="display: flex; align-items: center;">
+                    <span class="trend-emoji" style="font-size: 1.1rem;">${nbaFinalsTracker.knicksTrend}</span>
+                    <strong class="team-name" style="color: #fff; font-size: 1.2rem; margin-left: 8px; font-weight: 700;">${awayTeam}</strong>
                 </div>
-                <div class="team-score-badge highlight-win" style="background: #F58426; color: #000; padding: 4px 12px; border-radius: 6px; font-weight: bold; font-size: 1.1rem;">${nbaFinalsTracker.game2BoxScore.away.score}</div>
+                <div class="team-score-badge highlight-win" style="background: #F58426; color: #000; padding: 6px 14px; border-radius: 6px; font-weight: 800; font-size: 1.2rem; min-width: 35px; text-align: center;">${awayScore}</div>
             </div>
             
+            <!-- Spurs Panel Row -->
             <div class="team-row-display" style="display: flex; justify-content: space-between; align-items: center;">
-                <div class="team-info">
-                    <span class="trend-emoji">${nbaFinalsTracker.spursTrend}</span>
-                    <strong class="team-name" style="color: #fff; margin-left: 6px;">${nbaFinalsTracker.game1BoxScore?.home?.team || 'Spurs'}</strong>
+                <div class="team-info" style="display: flex; align-items: center;">
+                    <span class="trend-emoji" style="font-size: 1.1rem;">${nbaFinalsTracker.spursTrend}</span>
+                    <strong class="team-name" style="color: #fff; font-size: 1.2rem; margin-left: 8px; font-weight: 700;">${homeTeam}</strong>
                 </div>
-                <div class="team-score-badge" style="background: #2d2d2d; color: #fff; padding: 4px 12px; border-radius: 6px; font-weight: bold; font-size: 1.1rem;">${nbaFinalsTracker.game2BoxScore.home.score}</div>
+                <div class="team-score-badge" style="background: #2d2d2d; color: #fff; padding: 6px 14px; border-radius: 6px; font-weight: 800; font-size: 1.2rem; min-width: 35px; text-align: center;">${homeScore}</div>
             </div>
         </div>
 
-        <div class="series-footer-metrics" style="margin-top: 10px; padding-top: 8px; border-top: 1px solid #2d2d2d; font-size: 0.85rem;">
-            <p class="stat-highlight" style="color: #fff; margin: 4px 0;">🌟 <strong>Legacy Statement:</strong> ${nbaFinalsTracker.game2BoxScore.away.leader}</p>
-            <p class="stat-subtext" style="color: #888; margin: 2px 0;">${nbaFinalsTracker.game2BoxScore.keyStat}</p>
+        <div class="series-footer-metrics" style="margin-top: 14px; padding-top: 10px; border-top: 1px solid #333; font-size: 0.85rem; line-height: 1.4;">
+            <p class="stat-highlight" style="color: #fff; margin: 4px 0;">🌟 <strong>Game 2 Star:</strong> ${nbaFinalsTracker.game2BoxScore.away.leader}</p>
+            <p class="stat-subtext" style="color: #aaa; margin: 2px 0;">📊 ${nbaFinalsTracker.game2BoxScore.keyStat}</p>
         </div>
     `;
 
-    finalsWidget.style.background = '#1e1e1e';
-    finalsWidget.style.border = '1px solid #333';
+    // High-visibility component styling matching the look from image_e50801.png
+    finalsWidget.style.background = '#141414';
+    finalsWidget.style.border = '1px solid #F58426'; // Accented orange boundary line
     finalsWidget.style.borderRadius = '8px';
-    finalsWidget.style.padding = '16px';
-    finalsWidget.style.marginBottom = '20px';
+    finalsWidget.style.padding = '18px';
+    finalsWidget.style.marginBottom = '24px';
+    finalsWidget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.5)';
 
+    // Enforce top position injection inside the container card block
     container.insertBefore(finalsWidget, container.firstChild);
 }
 
-document.addEventListener('DOMContentLoaded', renderLiveBrackets);
+// Clean initialization loop
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', renderLiveBrackets);
+} else {
+    renderLiveBrackets();
+}
         
 async function fetchRSS() {
     const container = document.getElementById('rss-feed-container');
