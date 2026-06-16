@@ -159,8 +159,8 @@
 
 <!-- NEWS TICKER -->
    <div class="news-ticker">
-    <marquee scrollamount="5">
-        🚨 FINALS HEARTBREAK: New York Knicks hold off San Antonio Spurs 105-104 to claim a 2-0 Finals lead • Victor Wembanyama dominates with 29 PTS & 4 BLK but commits fatal late-game turnover • KAT registers 21 PTS & 13 REB as Knicks win 13th straight playoff game • Series shifts to Madison Square Garden for Game 3 on Monday...
+    <marquee scrollamount="4">
+        🏆 NEW YORK CITY STAND UP: New York Knicks defeat San Antonio Spurs 94-90 in Game 5 to win the 2026 NBA Championship • Jalen Brunson captures Finals MVP honors with an historic 45-point masterclass • Victor Wembanyama logs 19 PTS, 14 REB, & 5 BLK in defeat as Dylan Harper notches 21 • 53-year drought is over... Standings pool finalized...
     </marquee>
 </div>
 
@@ -186,20 +186,19 @@
     <script>
 // START
         
-// Cleaned state layout configuration
+// Definitive 2026 NBA Finals State - Championship Finalized June 15, 2026
 const nbaFinalsTracker = {
-    series: "2026 NBA Finals",
-    matchup: "Knicks vs. Spurs",
-    score: "2-0",
-    status: "NYK leads 2-0 • Game 3 Monday at Madison Square Garden (01:30 BST)",
-    knicksTrend: "🔥🔥🔥🔥🔥🔥",
-    spursTrend: "❄️❄️",
+    series: "2026 NBA Finals - CONCLUDED",
+    matchup: "Spurs vs. Knicks",
+    score: "NYK Wins 4-1",
+    status: "🏆 NEW YORK KNICKS ARE THE 2026 NBA CHAMPIONS",
+    knicksTrend: "🔥🔥🔥❄️🔥🔥", // Captured the crown on the road
+    spursTrend: "❄️❄️🔥❄️❄️",    // Season ends valiantly in Game 5
     
-    // Explicitly using game2BoxScore fields safely
-    game2BoxScore: {
-        away: { team: "Knicks", score: 105, leader: "Karl-Anthony Towns (21 PTS, 13 REB)" },
-        home: { team: "Spurs", score: 104, leader: "Victor Wembanyama (29 PTS, 9 REB)" },
-        keyStat: "Mikal Bridges: 20 PTS | Jalen Brunson: 20 PTS, 5 STL"
+    championshipBoxScore: {
+        away: { team: "Knicks", score: 94, leader: "Jalen Brunson (45 PTS, 14-27 FG, 15 in 4th)" },
+        home: { team: "Spurs", score: 90, leader: "Dylan Harper (21 PTS) | Wembanyama: 19 PTS, 14 REB, 5 BLK" },
+        keyStat: "Finals MVP: Jalen Brunson | New York claims first NBA title since 1973"
     }
 };
 
@@ -207,69 +206,55 @@ function renderLiveBrackets() {
     const container = document.querySelector('.daily-update-section'); 
     if (!container) return;
 
-    // Remove any ghost nodes to prevent double layout rendering
+    // Erase old data nodes to freeze the screen perfectly
     const oldWidget = document.querySelector('.finals-scoreboard-widget');
     if (oldWidget) oldWidget.remove();
 
     const finalsWidget = document.createElement('div');
     finalsWidget.className = 'finals-scoreboard-widget';
     
-    // Hardcoded safety defaults to prevent structural script crashing
-    const awayTeam = nbaFinalsTracker.game2BoxScore?.away?.team || "Knicks";
-    const awayScore = nbaFinalsTracker.game2BoxScore?.away?.score || 105;
-    const homeTeam = nbaFinalsTracker.game2BoxScore?.home?.team || "Spurs";
-    const homeScore = nbaFinalsTracker.game2BoxScore?.home?.score || 104;
-    
     finalsWidget.innerHTML = `
         <div class="series-header" style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #333; padding-bottom: 10px; margin-bottom: 14px;">
-            <span class="badge-live" style="background: #EF426F; color: #fff; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; uppercase;">🏆 ${nbaFinalsTracker.series}</span>
-            <span class="series-status-text" style="color: #F58426; font-size: 0.9rem; font-weight: 600;">${nbaFinalsTracker.status}</span>
+            <span class="badge-live" style="background: #F58426; color: #000; padding: 4px 10px; border-radius: 4px; font-size: 0.8rem; font-weight: bold; text-transform: uppercase;">🏆 CHAMPIONS</span>
+            <span class="series-status-text" style="color: #fff; font-size: 0.9rem; font-weight: 600;">${nbaFinalsTracker.status}</span>
         </div>
         
         <div class="teams-matchup-container" style="display: flex; flex-direction: column; gap: 12px; padding: 4px 0;">
-            <!-- Knicks Panel Row -->
             <div class="team-row-display" style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="team-info" style="display: flex; align-items: center;">
-                    <span class="trend-emoji" style="font-size: 1.1rem;">${nbaFinalsTracker.knicksTrend}</span>
-                    <strong class="team-name" style="color: #fff; font-size: 1.2rem; margin-left: 8px; font-weight: 700;">${awayTeam}</strong>
+                    <span class="trend-emoji" style="font-size: 1.1rem;">👑</span>
+                    <strong class="team-name" style="color: #F58426; font-size: 1.3rem; margin-left: 8px; font-weight: 800;">${nbaFinalsTracker.championshipBoxScore.away.team}</strong>
                 </div>
-                <div class="team-score-badge highlight-win" style="background: #F58426; color: #000; padding: 6px 14px; border-radius: 6px; font-weight: 800; font-size: 1.2rem; min-width: 35px; text-align: center;">${awayScore}</div>
+                <div class="team-score-badge highlight-win" style="background: #F58426; color: #000; padding: 6px 14px; border-radius: 6px; font-weight: 800; font-size: 1.2rem; min-width: 35px; text-align: center;">${nbaFinalsTracker.championshipBoxScore.away.score}</div>
             </div>
             
-            <!-- Spurs Panel Row -->
             <div class="team-row-display" style="display: flex; justify-content: space-between; align-items: center;">
                 <div class="team-info" style="display: flex; align-items: center;">
-                    <span class="trend-emoji" style="font-size: 1.1rem;">${nbaFinalsTracker.spursTrend}</span>
-                    <strong class="team-name" style="color: #fff; font-size: 1.2rem; margin-left: 8px; font-weight: 700;">${homeTeam}</strong>
+                    <span class="trend-emoji" style="font-size: 1.1rem;">🥈</span>
+                    <strong class="team-name" style="color: #aaa; font-size: 1.2rem; margin-left: 8px; font-weight: 700;">${nbaFinalsTracker.championshipBoxScore.home.team}</strong>
                 </div>
-                <div class="team-score-badge" style="background: #2d2d2d; color: #fff; padding: 6px 14px; border-radius: 6px; font-weight: 800; font-size: 1.2rem; min-width: 35px; text-align: center;">${homeScore}</div>
+                <div class="team-score-badge" style="background: #2d2d2d; color: #fff; padding: 6px 14px; border-radius: 6px; font-weight: 800; font-size: 1.2rem; min-width: 35px; text-align: center;">${nbaFinalsTracker.championshipBoxScore.home.score}</div>
             </div>
         </div>
 
         <div class="series-footer-metrics" style="margin-top: 14px; padding-top: 10px; border-top: 1px solid #333; font-size: 0.85rem; line-height: 1.4;">
-            <p class="stat-highlight" style="color: #fff; margin: 4px 0;">🌟 <strong>Game 2 Star:</strong> ${nbaFinalsTracker.game2BoxScore.away.leader}</p>
-            <p class="stat-subtext" style="color: #aaa; margin: 2px 0;">📊 ${nbaFinalsTracker.game2BoxScore.keyStat}</p>
+            <p class="stat-highlight" style="color: #fff; margin: 4px 0;">🌟 <strong>Finals MVP:</strong> ${nbaFinalsTracker.championshipBoxScore.away.leader}</p>
+            <p class="stat-subtext" style="color: #aaa; margin: 2px 0;">📊 <strong>Historical Legacy:</strong> ${nbaFinalsTracker.championshipBoxScore.keyStat}</p>
         </div>
     `;
 
-    // High-visibility component styling matching the look from image_e50801.png
+    // Gold themed border accent for the championship card display
     finalsWidget.style.background = '#141414';
-    finalsWidget.style.border = '1px solid #F58426'; // Accented orange boundary line
+    finalsWidget.style.border = '2px solid #FFD700'; 
     finalsWidget.style.borderRadius = '8px';
     finalsWidget.style.padding = '18px';
     finalsWidget.style.marginBottom = '24px';
-    finalsWidget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.5)';
+    finalsWidget.style.boxShadow = '0 6px 16px rgba(255,215,0,0.2)';
 
-    // Enforce top position injection inside the container card block
     container.insertBefore(finalsWidget, container.firstChild);
 }
 
-// Clean initialization loop
-if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', renderLiveBrackets);
-} else {
-    renderLiveBrackets();
-}
+document.addEventListener('DOMContentLoaded', renderLiveBrackets);
         
 async function fetchRSS() {
     const container = document.getElementById('rss-feed-container');
@@ -319,29 +304,29 @@ if (document.readyState === 'loading') {
     
 <!-- DAILY UPDATE SECTION -->
     
-<div class="update-card" style="border-left: 5px solid #F58426;">
-    <h2>🗽 Game 2 Review: Knicks Survive a Wembanyama Masterpiece</h2>
+<div class="update-card" style="border-left: 5px solid #F58426; background: #fafafa;">
+    <h2>🏆 Game 5: The Comeback Knicks Crowned NBA Champions!</h2>
     <div class="result-item-recap">
-        <strong>New York Knicks 105, San Antonio Spurs 104 (NYK Leads 2-0)</strong>
-        <p>The Knicks are officially historically relevant! Defeating San Antonio by a singular point on their home court, New York joins the 1993 Bulls and 1995 Rockets as the only teams in modern NBA history to steal the opening two frames of a Finals series on the road. Karl-Anthony Towns was an absolute monster inside, putting up 21 points and 13 rebounds to combat Wemby's length. Mikal Bridges and Landry Shamet hit massive, timely shots down the stretch to cushion the blow of a tough 7-for-25 shooting night from Jalen Brunson.</p>
+        <strong>New York Knicks 94, San Antonio Spurs 90 (NYK Wins Series 4-1)</strong>
+        <p>The 53-year drought is dead! In front of a stunned Frost Bank Center crowd, Jalen Brunson etched his name into basketball immortality by putting up 45 points to lead yet another dramatic double-digit comeback. Trailing by as many as 16 points early on, New York dug deep behind Brunson's 15-point fourth-quarter explosion. Mikal Bridges added 14 points and OG Anunoby hit the clinching free throws to hold off a spectacular 21-point fight from Spurs rookie Dylan Harper and Victor Wembanyama's 5 blocks, bringing the Larry O'Brien trophy back to Manhattan.</p>
     </div>
 </div>
 
-<div class="update-card" style="border-left: 5px solid #EF426F;">
-    <h2>📊 The Monday Night Garden Crucible (Game 3 Preview)</h2>
+<div class="update-card" style="border-left: 5px solid #FFD700;">
+    <h2>📊 The Anatomy of a Drought-Breaking Masterpiece</h2>
     <div class="betting-tip">
-        <h4>Wemby's Final Minute Meltdown</h4>
-        <p>Though Victor Wembanyama anchored a spectacular fourth-quarter comeback with 29 points and 4 blocks, his late-game execution proved fatal. A frantic, forced outlet pass inside the final ten seconds hit rookie Stephon Castle right in the back, leading to a loose-ball scramble, a transition foul, and Brunson's game-winning free-throw strike. San Antonio has zero margin for error as they enter the world's most famous arena.</p>
+        <h4>Brunson Enters Legendary Air</h4>
+        <p>With his 45-point eruption, Jalen Brunson became just the fourth player in NBA history to score 45 or more points in a Finals closeout game, joining Michael Jordan, Giannis Antetokounmpo, and Bob Pettit. He was unanimously awarded the Bill Russell Finals MVP trophy.</p>
     </div>
     <div class="betting-tip">
-        <h4>Dylan Harper's Spark</h4>
-        <p>The Silver and Black bench found a true diamond last night. Dylan Harper was a scoring spark plug off the pine, logging 15 points and 6 rebounds in 32 high-pressure minutes to keep the Spurs' offensive flow fluid.</p>
+        <h4>The Comeback Kings</h4>
+        <p>Remarkably, across their four victories in this series (Games 1, 2, 4, and 5), the Knicks successfully overcame double-digit deficits in every single one, culminating in the single greatest comeback in Finals history during Game 4's 29-point turnaround.</p>
     </div>
 </div>
 
-<div class="update-card champion-card" style="border-left: 5px solid #5a2d81;">
-    <h2>⚠️ POOL LEADERBOARD ALARM</h2>
-    <p>We have an absolute code-red layout update for the pool! Anyone who locked in a bold <strong>Knicks Sweep (4-0)</strong> prediction is currently riding an unprecedented high. If the Spurs can't steal Game 3 or 4 at the Garden, the £60 pot might be wrapped up by next weekend.</p>
+<div class="update-card champion-card" style="border-left: 5px solid #5a2d81; background: #fdf6ff;">
+    <h2>💰 FINAL STANDINGS: £60 LEADERBOARD WINNER RESOLVED</h2>
+    <p><strong>The 2026 Bracket Pool is Officially Complete!</strong> With the Knicks closing this out in 5 games, the final series margins have been frozen. Those who locked in a bold <strong>Knicks in 5</strong> prediction have hit the jackpot, vaulting to the top of the points index. Check your final rankings tabs—the £60 bounty is ready to be collected by our pool champion, and the victory parade rolls down the Canyon of Heroes this week!</p>
 </div>
     
     <!-- END -->
